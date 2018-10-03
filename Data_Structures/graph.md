@@ -29,3 +29,9 @@ Much less memory than the matrix, and also better time complexity in most of the
 
 Give a high level overview of an Adjacency List
 Adjacency list is a collection of unordered lists used to represent a finite graph. Each list describes the set of neighbors of a vertex in the graph. This is one of several commonly used representations of graphs for use in computer programs. It has a better space complexity, and in most of the cases better time complexity
+
+ What supporting data structure might you use for BFS and DFS, respectively?
+ Stack for DFS and Queue for BFS
+
+ What are the steps for DFS on a graph?
+ First, we need to know our starting node or vertice. Then we put it in a stack and push it in an array 'visited'. Then we check for its children or connected nodes. We add the first child in the stack (we choose a child based on a rule we want to define, like always choose the smaller value or choose based on the alphabetical order) and push it in 'visited as well. We move to that child and then do the same from there. If there are no more children, we pop the that node from the stack (the last one) and we go back to the parent node to check if there are any other children that are not 'visited'. If there are, we repeat the same process, otherwise we go back again to the parent and pop it from the stack.
