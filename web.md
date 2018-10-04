@@ -9,4 +9,7 @@ This is the brief answer:
 5. The browser sends an HTTP request to the web server.
 6. The server handles the request and sends back a response.
 7. The server sends out an HTTP response.
-8. The browser displays the HTML content (for HTML responses which is the most common). 
+8. The browser displays the HTML content (for HTML responses which is the most common).
+
+Why do we need a DNS?
+The Domain Name System (DNS) is often referred to as the backbone of the internet. It’s run by many engineers and their organizations, it ultimately shapes the future of the internet. We need DNS because it manages the whole process of how the internet works and how it is organized (we can use the example of what happens when you type in google.com and press enter)

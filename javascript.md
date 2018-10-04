@@ -49,3 +49,6 @@ You can use the stack if you know exactly how much data you need to allocate bef
 
  What is one problem with programming languages that a fully single-threaded?
  They can execute only one thread (the smallest sequence of programmed instructions that can be managed by the language) at a time
+
+ Is Javascript a single-threaded language? Explain (Hint: This may not be a yes or no question)
+ Javscript is single-threaded. Each browser window has only one Javascript thread running inside them. What makes the asynchronous events possible is the browser’s Event Loop and the associated Event Queue. 
