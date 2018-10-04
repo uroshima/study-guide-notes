@@ -38,3 +38,14 @@ for (let i = 0; i < arr.length; i++) {
     console.log(`The value ${arr[i]} is at index: ${i}`);
    }, (i) * 1000);
 }
+
+ What is the difference between the memory heap and call stack in javascript?
+ 1. Stack is used for static memory allocation and Heap for dynamic memory allocation, both stored in the computer's RAM .
+2. Variables allocated on the stack are stored directly to the memory and access to this memory is very fast. When a function or a method calls another function which in turns calls another function etc., the execution of all those functions remains suspended until the very last function returns its value. Variables allocated on the heap have their memory allocated at run time and accessing this memory is a bit slower
+3. The stack is always reserved in a LIFO order, the most recently reserved block is always the next block to be freed. This makes it really simple to keep track of the stack, freeing a block from the stack is nothing more than adjusting one pointer.Element of the heap have no dependencies with each other and can always be accessed randomly at any time. You can allocate a block at any time and free it at any time. This makes it much more complex to keep track of which parts of the heap are allocated or free at any given time.
+
+When to use stack and when to use heap?
+You can use the stack if you know exactly how much data you need to allocate before compile time and it is not too big. You can use heap if you don't know exactly how much data you will need at runtime or if you need to allocate a lot of data.
+
+ What is one problem with programming languages that a fully single-threaded?
+ They can execute only one thread (the smallest sequence of programmed instructions that can be managed by the language) at a time
