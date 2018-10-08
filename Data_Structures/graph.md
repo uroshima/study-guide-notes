@@ -38,3 +38,12 @@ Adjacency list is a collection of unordered lists used to represent a finite gra
 
  What are the steps for BFS on a graph?
  For BFS in a graph we use queue as a helper data structure. We start from a node and add it in the queue and in the 'visited' array. Then we check its children and add them in the queue and array as well. When there are no more children that are not part of the 'visited' array, we pop that node from the queue and move to one of the children (we can decide based on the smallest value, alphabetical order etc.). From there we repeat the process. But this time we are not gonna move further down to the children until we do this for all nodes in the line (all the children of our parent node).
+
+  On which types of Graphs can we do a topological sort?
+  Directed Acyclic Graph (DAG)
+
+ What data structure do we use to assist with the topological sort algorithm?
+ We use Stack (to sort the vertices) and Set (to keep track of visited vertices)
+
+ What is a difference between Topological Sort and DFS?
+ In DFS, we start from a vertex, we first print it and then recursively call DFS for its adjacent vertices. In topological sorting, we use a temporary stack. We don’t print the vertex immediately, we first recursively call topological sorting for all its adjacent vertices, then push it to a stack. Finally, print contents of stack. A vertex is pushed to stack only when all of its adjacent vertices (and their adjacent vertices and so on) are already in stack.
