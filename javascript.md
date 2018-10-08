@@ -80,3 +80,9 @@ You can use the stack if you know exactly how much data you need to allocate bef
  What is the syntax for an IIFE?
  The (surrounding parenthesis) prevents from treating it as a function declaration.
  The final parenthesis() are executing the function expression.
+
+ What's hoisting?
+ The behavior of “moving” var and function declarations to the top of their respective scopes during the compilation phase is called hoisting.
+Function declarations are completely hoisted. This means that a declared function can be called before it is defined.
+Variables are partially hoisted. var declarations are hoisted but not its assignments.
+let and const are not hoisted.

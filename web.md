@@ -16,3 +16,34 @@ The Domain Name System (DNS) is often referred to as the backbone of the interne
 
 Explain TCP, and why it is a necessary protocol
 TCP/IP (Transmission Control Protocol/Internet Protocol) is a set of allows anyone with a computer, modem, and an Internet service provider to access and share information over the Internet.Both TCP and IP, two separate protocols that work hand-in-hand, perform chores that manage and guide the general mobility of data packets over the Internet.
+
+What is the difference between TCP and UDP?
+TCP is a connection oriented stream over an IP network. It guarantees that all sent packets will reach the destination in the correct order. This imply the use of acknowledgement packets sent back to the sender, and automatic retransmission, causing additional delays and a general less efficient transmission than UDP.
+
+What are the common HTTP methods? When are they used, and what do they accomplish? (This is a big one)
+The set of common methods for HTTP/1.1 is defined below and this set can be expanded based on requirements. These method names are case sensitive and they must be used in uppercase.
+
+Method and Description:
+1	GET
+The GET method is used to retrieve information from the given server using a given URI. Requests using GET should only retrieve data and should have no other effect on the data.
+
+2	HEAD
+Same as GET, but transfers the status line and header section only.
+
+3	POST
+A POST request is used to send data to the server, for example, customer information, file upload, etc. using HTML forms.
+
+4	PUT
+Replaces all current representations of the target resource with the uploaded content.
+
+5	DELETE
+Removes all current representations of the target resource given by a URI.
+
+6	CONNECT
+Establishes a tunnel to the server identified by a given URI.
+
+7	OPTIONS
+Describes the communication options for the target resource.
+
+8	TRACE
+Performs a message loop-back test along the path to the target resource.
