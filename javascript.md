@@ -51,4 +51,32 @@ You can use the stack if you know exactly how much data you need to allocate bef
  They can execute only one thread (the smallest sequence of programmed instructions that can be managed by the language) at a time
 
  Is Javascript a single-threaded language? Explain (Hint: This may not be a yes or no question)
- Javscript is single-threaded. Each browser window has only one Javascript thread running inside them. What makes the asynchronous events possible is the browser’s Event Loop and the associated Event Queue. 
+ Javscript is single-threaded. Each browser window has only one Javascript thread running inside them. What makes the asynchronous events possible is the browser’s Event Loop and the associated Event Queue.
+
+  When is using an Immediate Invoked Function Expression (IIFE)
+ necessary?
+  - Enables you to attach private data to a function
+  - Creates fresh environments
+  - Avoids polluting the global namespace.
+
+  IIFE example
+  var result = [];
+  for (var i=0; i < 5; i++) {
+    result.push( function() { return i } );
+  }
+  console.log( result[1]() ); // 5
+  console.log( result[3]() ); // 5
+
+  result = [];
+  for (var i=0; i < 5; i++) {
+    (function () {
+      var j = i; // copy current value of i
+      result.push( function() { return j } );
+    })();
+  }
+  console.log( result[1]() ); // 1
+  console.log( result[3]() ); // 3
+
+ What is the syntax for an IIFE?
+ The (surrounding parenthesis) prevents from treating it as a function declaration.
+ The final parenthesis() are executing the function expression.
