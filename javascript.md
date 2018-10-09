@@ -89,3 +89,16 @@ let and const are not hoisted.
 
 What is a pure function? Impure function?
 An impure function is a function that mutates variables/state/data outside of it’s lexical scope, thus deeming it “impure” for this reason. A pure function is much easier to comprehend, especially as our codebase may scale, as well as role-based functions that do one job and do it well. Pure functions don’t modify external variables/state/data outside of the scope, and returns the same output given the same input. Therefore it is deemed “pure”.
+
+What is jQuery?
+jQuery is a lightweight, "write less, do more", JavaScript library.
+The purpose of jQuery is to make it much easier to use JavaScript on your website.
+jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.
+jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+The jQuery library contains the following features:
+ - HTML/DOM manipulation
+ - CSS manipulation
+ - HTML event methods
+ - Effects and animations
+ - AJAX
+ - Utilities
