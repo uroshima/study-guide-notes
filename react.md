@@ -26,13 +26,19 @@ Here you can cancel any outgoing network requests, or remove all event listeners
 Basically, clean up anything to do that solely involves the component in question — when it’s gone, it should be completely gone.
 
  What is a state tree in the context of Redux?
- The whole application, including the data is contained in a single object called state or state tree. When the user makes changes on the state, the application rerender the page and show the changes
+ The whole application, including the data is contained in a single object called state or state tree. When the user makes changes on the state, the application re-render the page and show the changes
 
  Why don't we want to modify (i.e. mutate) our redux state?
- Redux is a small library that represents state as (immutable) objects. And new states by passing the current state through pure functions to create an entirely new object/application states.
+ Redux is a small library that represents state as (immutable) object. And new states by passing the current state through pure functions to create an entirely new object/application states.
 If your eyes-glazed over there don't worry. To sum up, Redux does not represent changes in your application's state by modifying objects ( as you would with object-oriented paradigms). Instead state changes are represented as the difference between the input object and the output object (var output = reducer(input)). If you mutate either input or output you invalidate the state.
 To sum up another way, immutability is a requirement of Redux because Redux represents your application state as "frozen object snapshots". With these discrete snapshots, you can save your state, or reverse state, and generally have more "accounting" for all state changes.
 State of your app is only changed by a category of pure functions called reducers.
 
  Describe in detail what a redux reducer is. What makes it a pure function?
  The reducer is a pure function (because it doesn't change the input, it just use it to create a new object) that takes the previous state and an action, and returns the next state. (previousState, action) => newState. It's called a reducer because it's the type of function you would pass to Array.prototype.reduce(reducer, ?initialValue) .
+
+  What is the role of the store in Redux?
+  A store holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.
+
+   What does the subscribe method do in Redux?
+   Adds a change listener. It will be called any time an action is dispatched, and some part of the state tree may potentially have changed. You may then call getState() to read the current state tree inside the callback.

@@ -102,3 +102,11 @@ The jQuery library contains the following features:
  - Effects and animations
  - AJAX
  - Utilities
+
+  What does the new keyword do in Javascript?
+  The new keyword invokes a function in a special way. Functions invoked using the new keyword are called constructor functions.
+  So what does the new keyword actually do?
+ - Creates a new object.
+ - Sets the object’s prototype to be the prototype of the constructor function.
+ - Executes the constructor function with this as the newly created object.
+ - Returns the created object. If the constructor returns an object, this object is returned.
