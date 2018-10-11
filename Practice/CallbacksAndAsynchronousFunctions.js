@@ -1,4 +1,4 @@
-// From w5d5 homework & Intro to Callbacks Exercises - Callbacks and Function Calls 
+// From w5d5 homework & Intro to Callbacks Exercises - Callbacks and Function Calls
 
 window.setTimeout(() => {
   alert("Hammer");
@@ -51,3 +51,25 @@ const Noodles = new Dog ();
 // Noodles.chase(Markov); --> My name is Noodles and I'm chasing Markov! Woof!
 // Noodles.chase.call(Markov, Noodles); --> My name is Markov and I'm chasing Noodles! Woof!
 // Noodles.chase.apply(Markov, [Noodles]); --> My name is Markov and I'm chasing Noodles! Woof!
+
+class Clock {
+  constructor() {
+    this.date = new Date; // 1. Create a Date object.
+    this.hours = this.date.getHours(); // 2. Store the hours, minutes, and seconds.
+    this.minutes = this.date.getMinutes();
+    this.seconds = this.date.getSeconds();
+    this.printTime(); // 3. Call printTime.
+    setInterval(this._tick.bind(this), 1000); // 4. Schedule the tick at 1 second intervals.
+  }
+
+  printTime() {
+    console.log(`${this.hours}:${this.minutes}:${this.seconds}`);
+  }
+
+  _tick() {
+    this.seconds++;
+    this.printTime();
+  }
+}
+
+const clock = new Clock();
