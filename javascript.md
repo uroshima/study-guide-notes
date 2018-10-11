@@ -110,3 +110,20 @@ The jQuery library contains the following features:
  - Sets the object’s prototype to be the prototype of the constructor function.
  - Executes the constructor function with this as the newly created object.
  - Returns the created object. If the constructor returns an object, this object is returned.
+
+ Whats event bubling in JS?
+ When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
+
+  How can you stop event bubbling?
+  A bubbling event goes from the target element straight up. Normally it goes upwards till <html>, and then to documentobject, and some events even reach window, calling all handlers on the path.
+But any handler may decide that the event has been fully processed and stop the bubbling.
+The method for it is event.stopPropagation().
+
+What is the difference between event.target and event.currentTarget?
+event.target is the deepest element that originated the event.
+event.currentTarget (=this) is the current element that handles the event (the one that has the handler on it)
+
+ What does stopImmediatePropagation do?
+If an element has multiple event handlers on a single event, then even if one of them stops the bubbling, the other ones still execute.
+In other words, event.stopPropagation() stops the move upwards, but on the current element all other handlers will run.
+To stop the bubbling and prevent handlers on the current element from running, there’s a method event.stopImmediatePropagation(). After it no other handlers execute.

@@ -13,3 +13,9 @@
 
  How is memory allocated during recursive function calls?
  When any function is called from main(), the memory is allocated to it on stack. A recursive function calls itself, the memory for called function is allocated on top of memory allocated to calling function and different copy of local variables is created for each function call. When the base case is reached, the function returns its value to the function by whom it is called and memory is de-allocated and the process continues.
+
+ What is the difference between Memoization and Tabulation?
+ Memoization works in top down fashion (starts from the root of the tree) and Tabulation works in bottom up fashion
+ 
+ Why is memoization helpful?
+ Memoization is storing information and it helps with time complexity when some function is repeatedly being called. Instead of running that function again, we store the result the first time the function is called and then just look up that information

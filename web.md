@@ -47,3 +47,8 @@ Describes the communication options for the target resource.
 
 8	TRACE
 Performs a message loop-back test along the path to the target resource.
+
+ What is the difference between HTTP and HTTPS?
+ In address bar of a browser, have you noticed either http:// or https:// at the time of browsing a website? If neither of these are present then most likely, it’s http://
+In short, both of these are protocols using which the information of a particular website is exchanged between Web Server and Web Browser. But what’s difference between these two? Well, extra s is present in https and that makes it secure!
+Main difference between http and https is that https is much more secure compared to http.
