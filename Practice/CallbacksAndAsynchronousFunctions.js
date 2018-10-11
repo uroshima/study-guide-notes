@@ -1,5 +1,5 @@
 // From w5d5 homework & Intro to Callbacks Exercises - Callbacks and Function Calls
-
+// ex 1
 window.setTimeout(() => {
   alert("Hammer");
 }, 2000);
@@ -10,6 +10,7 @@ function hammerTime(time) {
   }, 1000);
 };
 
+// ex 2
 const readline = require("readline");
 const reader = readline.createInterface({
   input: process.stdin,
@@ -31,6 +32,7 @@ function teaAndBiscuits() {
 
 teaAndBiscuits();
 
+// ex 3
 function Cat () {
   this.name = 'Markov';
   this.age = 3;
@@ -52,6 +54,7 @@ const Noodles = new Dog ();
 // Noodles.chase.call(Markov, Noodles); --> My name is Markov and I'm chasing Noodles! Woof!
 // Noodles.chase.apply(Markov, [Noodles]); --> My name is Markov and I'm chasing Noodles! Woof!
 
+// ex 4
 class Clock {
   constructor() {
     this.date = new Date; // 1. Create a Date object.
@@ -73,3 +76,29 @@ class Clock {
 }
 
 const clock = new Clock();
+
+// ex 5
+const readline = require("readline");
+const reader = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+function addNumbers(sum, numsLeft, completionCallback) {
+  if (numsLeft > 0) {
+    reader.question("Whats ur number?", (ans) => {
+      let input = parseInt(ans);
+      sum += ans;
+      console.log(sum);
+      numsLeft--;
+      addNumbers(sum, numsLeft, completionCallback)
+    });
+  } else {
+    completionCallback(sum)
+  }
+}
+
+addNumbers(0, 3, function (sum) {
+  console.log("Total Sum: " + sum);
+  reader.close();
+});
