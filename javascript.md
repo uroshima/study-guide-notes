@@ -127,3 +127,15 @@ event.currentTarget (=this) is the current element that handles the event (the o
 If an element has multiple event handlers on a single event, then even if one of them stops the bubbling, the other ones still execute.
 In other words, event.stopPropagation() stops the move upwards, but on the current element all other handlers will run.
 To stop the bubbling and prevent handlers on the current element from running, there’s a method event.stopImmediatePropagation(). After it no other handlers execute.
+
+What is JSON.stringify() and when to use it?
+A common use of JSON is to exchange data to/from a web server.
+When sending data to a web server, the data has to be a string.
+Convert a JavaScript object into a string with JSON.stringify().
+var obj = { name: "John", age: 30, city: "New York" };
+var myJSON = JSON.stringify(obj);
+myJSON => {"name":"John","age":30,"city":"New York"}
+
+How to test JS Class?
+You can test it with creating html file, opening it from the terminal and then opening the dev tools.
+If there is no html file, you can type in node in the terminal and then paste the whole class. 
