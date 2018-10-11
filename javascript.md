@@ -138,4 +138,34 @@ myJSON => {"name":"John","age":30,"city":"New York"}
 
 How to test JS Class?
 You can test it with creating html file, opening it from the terminal and then opening the dev tools.
-If there is no html file, you can type in node in the terminal and then paste the whole class. 
+If there is no html file, you can type in node in the terminal and then paste the whole class.
+
+ What is event delegation?
+ Capturing and bubbling allow us to implement one of most powerful event handling patterns called event delegation.
+The idea is that if we have a lot of elements handled in a similar way, then instead of assigning a handler to each of them – we put a single handler on their common ancestor.
+In the handler we get event.target, see where the event actually happened and handle it.
+
+How do you get user input in JS?
+Ruby has the methods puts and gets. JavaScript has console.log as an analogue to puts, but it doesn't have an exact analogue for gets.
+In a web browser, you may use the prompt method to pop up a message box to ask for input from the user. When running server-side code in the node.js environment, prompt is not available (because node is not a graphical environment).
+Instead, you must use the readline library when writing server-side node.js programs.
+
+                                const readline = require('readline');
+
+                                const reader = readline.createInterface({
+                                  input: process.stdin,
+                                  output: process.stdout
+                                });
+
+                                reader.question("What is your name?", function (answer) {
+                                  console.log(`Hello ${answer}!`);
+                                });
+
+                                console.log("Last program line");
+
+                                <!--
+                                What is your name?
+                                Last program line
+                                Uroshima
+                                Hello Uroshima!
+                                -->

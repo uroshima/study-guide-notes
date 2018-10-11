@@ -16,6 +16,14 @@
 
  What is the difference between Memoization and Tabulation?
  Memoization works in top down fashion (starts from the root of the tree) and Tabulation works in bottom up fashion
- 
+
  Why is memoization helpful?
  Memoization is storing information and it helps with time complexity when some function is repeatedly being called. Instead of running that function again, we store the result the first time the function is called and then just look up that information
+
+  What is an optimal substructure in Dynamic Programming?
+  Following are the two main properties of a problem that suggest that the given problem can be solved using Dynamic programming:
+1) Overlapping Subproblems
+2) Optimal Substructure
+A given problems has Optimal Substructure Property if optimal solution of the given problem can be obtained by using optimal solutions of its subproblems.
+For example, the Shortest Path problem has following optimal substructure property:
+If a node x lies in the shortest path from a source node u to destination node v then the shortest path from u to v is combination of shortest path from u to x and shortest path from x to v. 
