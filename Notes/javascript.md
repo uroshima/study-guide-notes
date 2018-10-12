@@ -169,3 +169,17 @@ Instead, you must use the readline library when writing server-side node.js prog
                                 Uroshima
                                 Hello Uroshima!
                                 -->
+
+ Discuss 4 differences between ES5 and ES6 that you find important
+ 1. Block Scope
+ES5 only had “function-level scope” (i.e. you wrap code in functions to create scope) and caused a lot of issues. ES6 provides “block”-level scoping(i.e curly-braces to scope) when we use “let” or “const” instead of “var”.
+2. Lexical “this” (via Arrow Functions)
+In ES5, “this” can vary based on “where” it is called and even “how” it is called and has caused all sorts of pains for JS developers. ES6 eliminates this major issue by “lexical” this.
+Lexical “this” a feature that forces the variable “this” to always point to the object where it is physically located within.
+3. Dealing With “arguments”
+In ES5, “arguments” acts like an Array (i.e. we can loop over it), but is not an Array. So, all the Array functions like sort, slice and so on are not available.
+In ES6, we can use a new feature called “Rest” parameters. It’s represented with 3 dots and a name like …args. Rest parameters is an Array and so we can use all the Array functions.
+4. Classes
+Conceptually, there is no such thing as a “Class”(i.e. blueprint) in JS like it is in other OO languages like Java. But people for a long time have treated the “function” (aka “function constructors”) that creates Objects when we use the “new” keyword as Classes.
+And since JS doesn’t support the “Classes” and just simulates it via “prototypes”, it’s syntax has been very confusing for both existing JS developers and new comers who wants to use it in a traditional OO fashion. This is especially true for things like: creating subclasses, calling functions in parent class and so on.
+ES6 brings a new syntax that’s common in various programming languages and makes the whole thing simple. 

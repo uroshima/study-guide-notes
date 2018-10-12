@@ -42,3 +42,24 @@ State of your app is only changed by a category of pure functions called reducer
 
    What does the subscribe method do in Redux?
    Adds a change listener. It will be called any time an action is dispatched, and some part of the state tree may potentially have changed. You may then call getState() to read the current state tree inside the callback.
+
+ What are presentational components?
+- Presentational Components are primarily concerned with how things look
+- probably only contain a render method and little else logic
+- they do not know how to load or alter the data that they render
+- they are best written as stateless functional components
+Here is an example of a presentational component:
+
+//defining the component as a React Component
+class Image extends Component {
+ render() {
+   return <img src={this.props.image} />;
+ }
+}
+export default Image
+
+//defining the component as a constant
+const Image = props => (
+ <img src={props.image} />
+)
+export default Image   
