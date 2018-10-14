@@ -182,4 +182,12 @@ In ES6, we can use a new feature called “Rest” parameters. It’s represente
 4. Classes
 Conceptually, there is no such thing as a “Class”(i.e. blueprint) in JS like it is in other OO languages like Java. But people for a long time have treated the “function” (aka “function constructors”) that creates Objects when we use the “new” keyword as Classes.
 And since JS doesn’t support the “Classes” and just simulates it via “prototypes”, it’s syntax has been very confusing for both existing JS developers and new comers who wants to use it in a traditional OO fashion. This is especially true for things like: creating subclasses, calling functions in parent class and so on.
-ES6 brings a new syntax that’s common in various programming languages and makes the whole thing simple. 
+ES6 brings a new syntax that’s common in various programming languages and makes the whole thing simple.
+
+ What are the steps of a try..catch block in Javascript?
+ - First, the code in try {...} is executed.
+- If there were no errors, then catch(err) is ignored: the execution reaches the end of try and then jumps over catch.
+- If an error occurs, then try execution is stopped, and the control flows to the beginning of catch(err). The err variable (can use any name for it) contains an error object with details about what’s happened.
+
+ When creating a custom error, what attributes should it have?
+ Our errors should support basic error properties like message, name and, preferably, stack.
