@@ -18,3 +18,12 @@ If a parent node’s index is represented by index i in an array, then it’s le
 What is the formula for getting the parent of a node?
 (n - 1) / 2 (rounded up, so if it is (6 - 1) / 2 => 5 / 2 = 2.5 => 2)
 n - current node
+
+ What is the time-complexity of Heap Sort?
+ O(n log(n))
+
+  What are the steps for Heap Sort?
+  1. To start, we have an unsorted array. The first step is to take that array and turn it into a heap; in our case, we’ll want to turn it into a max heap.
+2. We’ll move the largest value — located at the root node — to the end of the heap by swapping it with the last element.
+3. Making sure that the new root node element is in the correct place! It’s highly unlikely that the item that we swapped into the root node position is in the right location, so we’ll move down the root node item down to its correct place, using a function that’s usually named something like heapify.
+And that’s basically it! The algorithm continues to repeat these steps until the heap is down to just one single node. At that point, it knows that all the elements in the unsorted array are in their sorted positions, and that the last node remaining will end up being the first element in the sorted array.

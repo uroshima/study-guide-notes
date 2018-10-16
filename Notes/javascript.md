@@ -112,7 +112,7 @@ The two major features of AJAX allow you to do the following:
 2. Receive and work with data from the server
 
  What is an XMLHttpRequest?
- XMLHttpRequest (XHR) is an API in the form of an object whose methods transfer data between a web browser and a web server. The object is provided by the browser's JavaScript environment. 
+ XMLHttpRequest (XHR) is an API in the form of an object whose methods transfer data between a web browser and a web server. The object is provided by the browser's JavaScript environment.
 
   What does the new keyword do in Javascript?
   The new keyword invokes a function in a special way. Functions invoked using the new keyword are called constructor functions.
@@ -202,3 +202,49 @@ ES6 brings a new syntax that’s common in various programming languages and mak
 
  When creating a custom error, what attributes should it have?
  Our errors should support basic error properties like message, name and, preferably, stack.
+
+ Discuss the differences between let, const, and var. What are their respective scopings?
+ Before ES6, it was only possible to declare a variable using var. Variables and functions declared inside another function cannot be accessed by any of the enclosing scopes — they are function-scoped.
+ Variables declared inside a block-scope, such as if statements and for loops, can be accessed from outside of the opening and closing curly braces of the block.
+ Note: An undeclared variable — assignment without var, let or const — creates a var variable in global scope.
+
+           function greeting() {
+            console.log(s) // undefined
+            if(true) {
+              var s = 'Hi';
+              undeclaredVar = 'I am automatically created in global scope';
+            }
+            console.log(s) // 'Hi'
+          }
+          console.log(s);  // Error — ReferenceError: s is not defined
+          greeting();
+          console.log(undeclaredVar) // 'I am automatically created in global scope'
+
+ES6 let and const are new. They are not hoisted and block-scoped alternatives for variable declaration. This means that a pair of curly braces define a scope in which variables declared with either let or const are confined in.
+
+          let g1 = 'global 1'
+          let g2 = 'global 2'
+          {   /* Creating a new block scope /*
+            g1 = 'new global 1'
+            let g2 = 'local global 2'
+            console.log(g1)   // 'new global 1'
+            console.log(g2)   // 'local global 2'
+            console.log(g3)   // ReferenceError: g3 is not defined
+            let g3 = 'I am not hoisted';
+          }
+          console.log(g1)    // 'new global 1'
+          console.log(g2)    // 'global 2'      
+
+A common misconception is that const is immutable. It cannot be reassigned, but its properties can be changed!   
+
+          const tryMe = 'initial assignment';
+          tryMe = 'this has been reassigned';  // TypeError: Assignment to constant variable.
+          // You cannot reassign but you can change it…
+          const array = ['Ted', 'is', 'awesome!'];
+          array[0] = 'Barney';
+          array[3] = 'Suit up!';
+          console.log(array);     // [“Barney”, “is”, “awesome!”, “Suit up!”]
+          const airplane = {};
+          airplane.wings = 2;
+          airplane.passengers = 200;
+          console.log(airplane);   // {passengers: 200, wings: 2}           

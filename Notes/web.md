@@ -70,3 +70,9 @@ XSS in combination with social engineering, allow attackers to pull off advanced
 
  What is a CSRF Attack?
  Cross Site Request Forgery (CSRF) is an attack whereby a malicious entity tricks a victim into performing actions on behalf of the attacker. The impact of the attack would depend on the level of permissions that the victim being exploited has. The actions being perpetrated by the attacker will surely have a greater effect if the victim performing the actions is at an administrative level versus a low level user, with less privileges. CSRF attacks take advantage of the fact that a web application completely trusts a user, once it can confirm that the user is indeed who they say they are.
+
+  When are two pages considered to have the same origin?
+  Two pages have the same origin if the protocol, port (if one is specified), and host are the same for both pages.
+
+   What is CORS?
+   Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin. A web application makes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, and port) than its own origin.

@@ -50,16 +50,35 @@ State of your app is only changed by a category of pure functions called reducer
 - they are best written as stateless functional components
 Here is an example of a presentational component:
 
-//defining the component as a React Component
-class Image extends Component {
- render() {
-   return <img src={this.props.image} />;
- }
-}
-export default Image
+          //defining the component as a React Component
+          class Image extends Component {
+           render() {
+             return <img src={this.props.image} />;
+           }
+          }
+          export default Image
 
-//defining the component as a constant
-const Image = props => (
- <img src={props.image} />
-)
-export default Image   
+          //defining the component as a constant
+          const Image = props => (
+           <img src={props.image} />
+          )
+          export default Image   
+
+ Explain Context in React
+ Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+In a typical React application, data is passed top-down (parent to child) via props, but this can be cumbersome for certain types of props (e.g. locale preference, UI theme) that are required by many components within an application. Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree.
+When to Use Context:
+Context is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language.
+
+What does the <Provider> component do?
+Provider is a React component that allows Consumers to subscribe to context changes.
+Accepts a value prop to be passed to Consumers that are descendants of this Provider. One Provider can be connected to many Consumers. Providers can be nested to override values deeper within the tree. Example:
+
+        const store = createStore(rootReducer)
+        ​
+        render(
+        <Provider store={store}>
+        <App />
+        </Provider>,
+        document.getElementById('root')
+        )
