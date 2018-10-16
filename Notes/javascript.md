@@ -103,6 +103,17 @@ The jQuery library contains the following features:
  - AJAX
  - Utilities
 
+ What is AJAX?
+ AJAX is not a programming language.
+ AJAX is a technique for accessing web servers from a web page.
+ AJAX stands for Asynchronous JavaScript And XML. In a nutshell, it is the use of the XMLHttpRequest object to communicate with servers. It can send and receive information in various formats, including JSON, XML, HTML, and text files. AJAX’s most appealing characteristic is its "asynchronous" nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.
+The two major features of AJAX allow you to do the following:
+1. Make requests to the server without reloading the page
+2. Receive and work with data from the server
+
+ What is an XMLHttpRequest?
+ XMLHttpRequest (XHR) is an API in the form of an object whose methods transfer data between a web browser and a web server. The object is provided by the browser's JavaScript environment. 
+
   What does the new keyword do in Javascript?
   The new keyword invokes a function in a special way. Functions invoked using the new keyword are called constructor functions.
   So what does the new keyword actually do?
