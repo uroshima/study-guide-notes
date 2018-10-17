@@ -247,4 +247,5 @@ A common misconception is that const is immutable. It cannot be reassigned, but 
           const airplane = {};
           airplane.wings = 2;
           airplane.passengers = 200;
-          console.log(airplane);   // {passengers: 200, wings: 2}           
+          console.log(airplane);   // {passengers: 200, wings: 2}     
+      
