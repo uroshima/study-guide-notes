@@ -74,5 +74,5 @@ XSS in combination with social engineering, allow attackers to pull off advanced
   When are two pages considered to have the same origin?
   Two pages have the same origin if the protocol, port (if one is specified), and host are the same for both pages.
 
-   What is CORS?
-   Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin. A web application makes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, and port) than its own origin.
+ What is CORS?
+ Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin. A web application makes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, and port) than its own origin.

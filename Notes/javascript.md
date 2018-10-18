@@ -222,30 +222,29 @@ ES6 brings a new syntax that’s common in various programming languages and mak
 
 ES6 let and const are new. They are not hoisted and block-scoped alternatives for variable declaration. This means that a pair of curly braces define a scope in which variables declared with either let or const are confined in.
 
-          let g1 = 'global 1'
-          let g2 = 'global 2'
-          {   /* Creating a new block scope /*
-            g1 = 'new global 1'
-            let g2 = 'local global 2'
-            console.log(g1)   // 'new global 1'
-            console.log(g2)   // 'local global 2'
-            console.log(g3)   // ReferenceError: g3 is not defined
-            let g3 = 'I am not hoisted';
-          }
-          console.log(g1)    // 'new global 1'
-          console.log(g2)    // 'global 2'      
+        let g1 = 'global 1'
+        let g2 = 'global 2'
+        {   /* Creating a new block scope /*
+          g1 = 'new global 1'
+          let g2 = 'local global 2'
+          console.log(g1)   // 'new global 1'
+          console.log(g2)   // 'local global 2'
+          console.log(g3)   // ReferenceError: g3 is not defined
+          let g3 = 'I am not hoisted';
+        }
+        console.log(g1)    // 'new global 1'
+        console.log(g2)    // 'global 2'      
 
 A common misconception is that const is immutable. It cannot be reassigned, but its properties can be changed!   
 
-          const tryMe = 'initial assignment';
-          tryMe = 'this has been reassigned';  // TypeError: Assignment to constant variable.
-          // You cannot reassign but you can change it…
-          const array = ['Ted', 'is', 'awesome!'];
-          array[0] = 'Barney';
-          array[3] = 'Suit up!';
-          console.log(array);     // [“Barney”, “is”, “awesome!”, “Suit up!”]
-          const airplane = {};
-          airplane.wings = 2;
-          airplane.passengers = 200;
-          console.log(airplane);   // {passengers: 200, wings: 2}     
-      
+        const tryMe = 'initial assignment';
+        tryMe = 'this has been reassigned';  // TypeError: Assignment to constant variable.
+        // You cannot reassign but you can change it…
+        const array = ['Ted', 'is', 'awesome!'];
+        array[0] = 'Barney';
+        array[3] = 'Suit up!';
+        console.log(array);     // [“Barney”, “is”, “awesome!”, “Suit up!”]
+        const airplane = {};
+        airplane.wings = 2;
+        airplane.passengers = 200;
+        console.log(airplane);   // {passengers: 200, wings: 2}     
