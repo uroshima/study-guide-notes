@@ -271,3 +271,17 @@ For instance, to gather all arguments into array args:
           alert( sumAll(1) ); // 1
           alert( sumAll(1, 2) ); // 3
           alert( sumAll(1, 2, 3) ); // 6
+
+ What problem does bind solve in Javascript? How does it accomplish this?
+ Usually we apply bind to fix "this" in an object method, so that we can pass it somewhere. For example, to setTimeout.
+
+        let user = {
+          firstName: "John",
+          say(phrase) {
+            alert(`${phrase}, ${this.firstName}!`);
+          }
+        };
+
+        let say = user.say.bind(user);
+        say("Hello"); ==> Hello, John ("Hello" argument is passed to say)
+        say("Bye"); ==> Bye, John ("Bye" is passed to say)

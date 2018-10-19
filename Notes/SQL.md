@@ -19,3 +19,12 @@ In which order does SQL execute its queries?
 6. DISTINCT
 7. ORDER BY
 8. LIMIT / OFFSET
+
+What are the different type of SQL Joins and how do they differ?
+check this article for more info http://www.sql-join.com/sql-join-types/
+There are four basic types of SQL joins: inner, left, right, and full.
+Let’s say we have two sets of data in our relational database: table A and table B, with some sort of relation specified by primary and foreign keys. The extent of the overlap, if any, is determined by how many records in Table A match the records in Table B.
+1. Inner Join - Select all records from Table A and Table B, where the join condition is met.
+2. Left Join - Select all records from Table A, along with records from Table B for which the join condition is met (if at all).
+3. Right Join - Select all records from Table B, along with records from Table A for which the join condition is met (if at all).
+4. Full Join - Select all records from Table A and Table B, regardless of whether the join condition is met or not.
