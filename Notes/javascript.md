@@ -248,3 +248,26 @@ A common misconception is that const is immutable. It cannot be reassigned, but 
         airplane.wings = 2;
         airplane.passengers = 200;
         console.log(airplane);   // {passengers: 200, wings: 2}     
+
+What happens when you enable strict mode in javascript?
+The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+With strict mode, you can not, for example, use undeclared variables.
+Strict mode makes it easier to write "secure" JavaScript.
+Strict mode changes previously accepted "bad syntax" into real errors.
+As an example, in normal JavaScript, mistyping a variable name creates a new global variable. In strict mode, this will throw an error, making it impossible to accidentally create a global variable.
+
+How does the rest/spread operator work in JS?
+The rest parameters can be mentioned in a function definition with three dots .... They literally mean “gather the remaining parameters into an array”.
+For instance, to gather all arguments into array args:
+
+          function sumAll(...args) { // args is the name for the array
+            let sum = 0;
+
+            for (let arg of args) sum += arg;
+
+            return sum;
+          }
+
+          alert( sumAll(1) ); // 1
+          alert( sumAll(1, 2) ); // 3
+          alert( sumAll(1, 2, 3) ); // 6
