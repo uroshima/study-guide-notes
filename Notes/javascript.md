@@ -285,3 +285,6 @@ For instance, to gather all arguments into array args:
         let say = user.say.bind(user);
         say("Hello"); ==> Hello, John ("Hello" argument is passed to say)
         say("Bye"); ==> Bye, John ("Bye" is passed to say)
+
+ What does the length attribute refer to in a Function in Javascript?
+ Length is a built-in property. It refers to the number of arguments. Rest parameter is not counted (if there is one). Another built-in property in a JavaScript Function is the name property. 

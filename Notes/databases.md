@@ -28,3 +28,18 @@ Let’s say we have two sets of data in our relational database: table A and tab
 2. Left Join - Select all records from Table A, along with records from Table B for which the join condition is met (if at all).
 3. Right Join - Select all records from Table B, along with records from Table A for which the join condition is met (if at all).
 4. Full Join - Select all records from Table A and Table B, regardless of whether the join condition is met or not.
+
+Where in a SQL query may we use a sub query (After which SQL keyword) ?
+Right after the keyword FROM
+
+            SELECT sub.*
+            FROM (
+                         SELECT *
+                         FROM tutorial.sf_crime_incidents_2014_01
+                         WHERE day_of_week = 'Friday'
+                         ) sub
+            WHERE sub.resolution = 'NONE'
+
+What is the difference between horizontally and vertically scaling databases?
+Horizontal scalability is the ability to increase capacity by connecting multiple hardware or software entities so that they work as a single logical unit. An important advantage of horizontal scalability is that it can provide administrators with the ability to increase capacity on the fly. Another advantage is that in theory, horizontal scalability is only limited by how many entities can be connected successfully. The distributed storage system Cassandra, for example, runs on top of hundreds of commodity nodes spread across different data centers. Because the commodity hardware is scaled out horizontally, Cassandra is fault tolerant and does not have a single point of failure (SPoF).
+Vertical scalability, on the other hand, increases capacity by adding more resources, such as more memory or an additional CPU, to a machine. Scaling vertically, which is also called scaling up, usually requires downtime while new resources are being added and has limits that are defined by hardware.
