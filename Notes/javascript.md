@@ -287,4 +287,17 @@ For instance, to gather all arguments into array args:
         say("Bye"); ==> Bye, John ("Bye" is passed to say)
 
  What does the length attribute refer to in a Function in Javascript?
- Length is a built-in property. It refers to the number of arguments. Rest parameter is not counted (if there is one). Another built-in property in a JavaScript Function is the name property. 
+ Length is a built-in property. It refers to the number of arguments. Rest parameter is not counted (if there is one). Another built-in property in a JavaScript Function is the name property.
+
+  Explain the differences between a Function Expression and Function Declaration
+  A Function Expression is created when the execution reaches it and is usable from then on — it is not hoisted.
+
+          var sum = function(a, b) {
+            return a + b;
+          }
+
+A Function Declaration can be called both before and after it was defined — it is hoisted.
+
+          function sum(a, b) {
+            return a + b;
+          }
