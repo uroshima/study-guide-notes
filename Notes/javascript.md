@@ -149,7 +149,7 @@ myJSON => {"name":"John","age":30,"city":"New York"}
 
 How to test JS Class?
 You can test it with creating html file, opening it from the terminal and then opening the dev tools.
-If there is no html file, you can type in node in the terminal and then paste the whole class.
+If there is no html file, you can type in "node" in the terminal and then paste the whole class.
 
  What is event delegation?
  Capturing and bubbling allow us to implement one of most powerful event handling patterns called event delegation.
@@ -263,9 +263,9 @@ For instance, to gather all arguments into array args:
           function sumAll(...args) { // args is the name for the array
             let sum = 0;
 
-            for (let arg of args) sum += arg;
-
-            return sum;
+            for (let arg of args) 
+              sum += arg;
+              return sum;
           }
 
           alert( sumAll(1) ); // 1

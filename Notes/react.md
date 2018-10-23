@@ -77,8 +77,8 @@ Accepts a value prop to be passed to Consumers that are descendants of this Prov
         const store = createStore(rootReducer)
         ​
         render(
-        <Provider store={store}>
-        <App />
-        </Provider>,
+          <Provider store={store}>
+            <App />
+          </Provider>,
         document.getElementById('root')
         )
