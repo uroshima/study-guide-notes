@@ -263,7 +263,7 @@ For instance, to gather all arguments into array args:
           function sumAll(...args) { // args is the name for the array
             let sum = 0;
 
-            for (let arg of args) 
+            for (let arg of args)
               sum += arg;
               return sum;
           }
@@ -301,3 +301,13 @@ A Function Declaration can be called both before and after it was defined —�
           function sum(a, b) {
             return a + b;
           }
+
+What are the 7 different JS types?
+There are 7 built-in types: null, undefined , boolean, number, string, object and symbol     
+
+What are falsy values in JS?
+Falsy values: "", 0, null, undefined, NaN, false.
+
+Does JS assign variables by value or by reference?
+Simple values (also known as primitives) are always assigned by value-copy: null, undefined , boolean, number, string and ES6 symbol.
+Compound values always create a copy of the reference on assignment: objects, which includes arrays, and functions.     

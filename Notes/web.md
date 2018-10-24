@@ -76,3 +76,25 @@ XSS in combination with social engineering, allow attackers to pull off advanced
 
  What is CORS?
  Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin. A web application makes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, and port) than its own origin.
+
+ What is Round Robin DNS binding?
+ Round Robin DNS is a technique of load distribution, load balancing, or fault-tolerance provisioning multiple, redundant Internet Protocol service hosts, e.g., Web server, FTP servers, by managing the Domain Name System's (DNS) responses to address requests from client computers according to an appropriate statistical model.
+
+ What is striping when talking about writing to a Hard drive?
+ Disk striping is the process of dividing a body of data into blocks and spreading the data blocks across multiple storage devices, such as hard disks or solid-state drives (SSDs).
+
+What is RAID and what functionality can it give you?
+RAID is an acronym for Redundant Array of Independent Disks, which is a storage method that combines multiple physical disk drives into one virtual drive. A RAID setup can be faster than a single disk, and provide drive failure protection you can't get with a single disk.
+
+ How do computers synchronize their clocks?
+ All computers by default sync to a NTP (Network Time Protocol) server. Generally all computers get their time from these servers all over the world and sync to their local timezone.
+Unless you work in an office. Most times there are main servers in your company, that get their time for the above NTP servers. Then workstations get their time from the main servers.
+
+ What is manchester coding?
+ In telecommunication and data storage, Manchester code (also known as phase encoding, or PE) is a line code in which the encoding of each data bit is either low then high, or high then low, for equal time. It is a self-clocking signal with no DC component. As a result, electrical connections using a Manchester code are easily galvanically isolated.
+Manchester code derives its name from its development at the University of Manchester, where the coding was used to store data on the magnetic drum of the Manchester Mark 1 computer.
+
+What's memcache?
+Memcached is an open source, distributed memory object caching system that alleviates database load to speed up dynamic Web applications.
+The system caches data and objects in memory to minimize the frequency with which an external database or API (application program interface) must be accessed.
+In the Memcached system, each item comprises a key, an expiration time, optional flags, and raw data. When an item is requested, Memcached checks the expiration time to see if the item is still valid before returning it to the client. The cache can be seamlessly integrated with the application by ensuring that the cache is updated at the same time as the database.
