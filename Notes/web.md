@@ -98,3 +98,6 @@ What's memcache?
 Memcached is an open source, distributed memory object caching system that alleviates database load to speed up dynamic Web applications.
 The system caches data and objects in memory to minimize the frequency with which an external database or API (application program interface) must be accessed.
 In the Memcached system, each item comprises a key, an expiration time, optional flags, and raw data. When an item is requested, Memcached checks the expiration time to see if the item is still valid before returning it to the client. The cache can be seamlessly integrated with the application by ensuring that the cache is updated at the same time as the database.
+
+ Why would you want to use an LRU cache in a backend server?
+ Cache is useful when you have a database-driven website that gets high amounts of traffic as it can help reduce the load on your database server by bypassing it completely to retrieve certain data.

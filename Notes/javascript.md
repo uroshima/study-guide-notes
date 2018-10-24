@@ -311,3 +311,13 @@ Falsy values: "", 0, null, undefined, NaN, false.
 Does JS assign variables by value or by reference?
 Simple values (also known as primitives) are always assigned by value-copy: null, undefined , boolean, number, string and ES6 symbol.
 Compound values always create a copy of the reference on assignment: objects, which includes arrays, and functions.     
+
+How does prototypal inheritance work?
+There are three different kinds of prototypal inheritance:
+1. Prototype delegation — A delegate prototype is an object which is used as a model for another object. When you inherit from a delegate prototype, the new object gets a reference to the prototype and its properties.
+This process is usually accomplished by using Object.create().
+2. Concatenative inheritance — The process of inheriting properties from one object to another by copying the object’s prototype properties, without retaining a reference between them.
+This process is usually accomplished by using Object.assign().
+3. Functional inheritance — This process makes use of a factory function()to create an object, and then adds new properties directly to the created object.
+This process has the benefit of allowing data encapsulation via closure.
+()Factory function is a function that is not a class or constructor that returns an object without using the new keyword.
