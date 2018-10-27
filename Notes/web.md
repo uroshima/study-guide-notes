@@ -77,6 +77,11 @@ XSS in combination with social engineering, allow attackers to pull off advanced
  What is CORS?
  Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin. A web application makes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, and port) than its own origin.
 
+What is Round Robin?
+Round robin is the simplest form of load balancing. It rotates through the IP addresses in the configuration with no regard to if those servers are even up.
+Since there is no way to tell if those systems are available or not, you could be sending traffic to a slow or unhealthy server.
+Say you have three systems in your network. If one of them goes down, roughly a third of your traffic will still be pointed to that system.
+
  What is Round Robin DNS binding?
  Round Robin DNS is a technique of load distribution, load balancing, or fault-tolerance provisioning multiple, redundant Internet Protocol service hosts, e.g., Web server, FTP servers, by managing the Domain Name System's (DNS) responses to address requests from client computers according to an appropriate statistical model.
 
@@ -101,3 +106,26 @@ In the Memcached system, each item comprises a key, an expiration time, optional
 
 Why would you want to use an LRU cache in a backend server?
 Cache is useful when you have a database-driven website that gets high amounts of traffic as it can help reduce the load on your database server by bypassing it completely to retrieve certain data.
+
+What is Address Resolution Protocol?
+Address Resolution Protocol (ARP) is a protocol for mapping an Internet Protocol address (IP address) to a physical machine address that is recognized in the local network. For example, in IP Version 4, the most common level of IP in use today, an address is 32 bits long. In an Ethernet local area network, however, addresses for attached devices are 48 bits long. (The physical machine address is also known as a Media Access Control or MAC address.) A table, usually called the ARP cache, is used to maintain a correlation between each MAC address and its corresponding IP address. ARP provides the protocol rules for making this correlation and providing address conversion in both directions.
+
+What is the purpose of TCP?
+TCP (Transmission Control Protocol) is a standard that defines how to establish and maintain a network conversation via which application programs can exchange data.TCP works with the Internet Protocol (IP), which defines how computers send packets of data to each other.
+
+What is Load Balancing?
+For more details check this link http://news.constellix.com/dns-load-balancing-what-is-it-and-why-do-you-need-it/
+<!-- DNS Load Balancing: What is It and Why Do You Need It? -->
+Load balancing is commonly used to balance traffic across redundant systems, like web or application servers. So if one server is unavailable, there are multiple other servers ready to take over the traffic load.
+Load balancing can do some pretty amazing things, like:
+ - Outage protection
+ - Improve load times
+ - Reduce server load
+Seamless app rollouts or network expansions
+If load balancing can do such amazing things, why isn’t everyone using it?! Good question, I don’t know… but some quick Googling told me this:
+ - Load balancing is expensive
+ - Hard to set up
+ - Requires extra lookups
+
+What is the principle of Least Privilege?
+The principle of least privilege (POLP), an important concept in computer security, is the practice of limiting access rights for users to the bare minimum permissions they need to perform their work. Under POLP, users are granted permission to read, write or execute only the files or resources they need to do their jobs: In other words, the least amount of privilege necessary.
