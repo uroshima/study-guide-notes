@@ -90,8 +90,8 @@ RAID is an acronym for Redundant Array of Independent Disks, which is a storage 
  All computers by default sync to a NTP (Network Time Protocol) server. Generally all computers get their time from these servers all over the world and sync to their local timezone.
 Unless you work in an office. Most times there are main servers in your company, that get their time for the above NTP servers. Then workstations get their time from the main servers.
 
- What is manchester coding?
- In telecommunication and data storage, Manchester code (also known as phase encoding, or PE) is a line code in which the encoding of each data bit is either low then high, or high then low, for equal time. It is a self-clocking signal with no DC component. As a result, electrical connections using a Manchester code are easily galvanically isolated.
+What is manchester coding?
+In telecommunication and data storage, Manchester code (also known as phase encoding, or PE) is a line code in which the encoding of each data bit is either low then high, or high then low, for equal time. It is a self-clocking signal with no DC component. As a result, electrical connections using a Manchester code are easily galvanically isolated.
 Manchester code derives its name from its development at the University of Manchester, where the coding was used to store data on the magnetic drum of the Manchester Mark 1 computer.
 
 What's memcache?
@@ -99,5 +99,5 @@ Memcached is an open source, distributed memory object caching system that allev
 The system caches data and objects in memory to minimize the frequency with which an external database or API (application program interface) must be accessed.
 In the Memcached system, each item comprises a key, an expiration time, optional flags, and raw data. When an item is requested, Memcached checks the expiration time to see if the item is still valid before returning it to the client. The cache can be seamlessly integrated with the application by ensuring that the cache is updated at the same time as the database.
 
- Why would you want to use an LRU cache in a backend server?
- Cache is useful when you have a database-driven website that gets high amounts of traffic as it can help reduce the load on your database server by bypassing it completely to retrieve certain data.
+Why would you want to use an LRU cache in a backend server?
+Cache is useful when you have a database-driven website that gets high amounts of traffic as it can help reduce the load on your database server by bypassing it completely to retrieve certain data.
