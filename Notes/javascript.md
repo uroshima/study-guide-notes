@@ -320,3 +320,30 @@ This process is usually accomplished by using Object.assign().
 3. Functional inheritance — This process makes use of a factory function()to create an object, and then adds new properties directly to the created object.
 This process has the benefit of allowing data encapsulation via closure.
 ()Factory function is a function that is not a class or constructor that returns an object without using the new keyword.
+
+ What's the JS Global Object?
+In a browser it is named “window”, for Node.JS it is “global”, for other environments it may have another name.
+It does two things:
+1. Provides access to built-in functions and values, defined by the specification and the environment. For instance, we can call alert directly or as a method of window:
+
+          alert("Hello");
+
+          // the same as
+          window.alert("Hello");
+
+2. Provides access to global Function Declarations and var variables. We can read and write them using its properties, for instance:
+
+          var phrase = "Hello";
+
+          function sayHi() {
+            alert(phrase);
+          }
+
+          // can read from window
+          alert( window.phrase ); // Hello (global var)
+          alert( window.sayHi ); // function (global function declaration)
+
+          // can write to window (creates a new global variable)
+          window.test = 5;
+
+          alert(test); // 5
