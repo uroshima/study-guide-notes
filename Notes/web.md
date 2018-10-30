@@ -135,10 +135,32 @@ Top 10 ways to speed up a website
 1. Minimize HTTP requests
 2. Minify and combine files
 3. Use asynchronous loading for CSS and JavaScript files
-4. Defer JavaScript loading
-5. Minimize time to first byte
+4. Reduce redirects
+5. Reduce external scripts
 6. Reduce server response time
 7. Choose the right hosting option for your needs
-8. Run a compression audit
-9. Enable compression
+8. Use external hosting platforms
+9. Reduce image sizes
 10. Enable browser caching
+also check this link for more details https://browserdiet.com/
+
+Why is FTP a bad idea?
+FTP, File Transfer Protocol, has been around since the beginning of the internet in the early 1970s. It transfered files when the internet was a safer, more trusting, place. That isn’t the case anymore. Using FTP to host files is probably a bad idea for almost everyone. FTP is like Telnet. No encryption is used for anything. These days, we know that is bad. There are lots of important issues with using plain FTP, but the biggest two are:
+
+1. Passwords are transmitted un-encrypted – this is reason enough to not use it anymore
+2. Data is transmitted un-encrypted – this may or may not be that important to any specific download
+
+ What kinds of information is at risk when comunicating over HTTP?
+ HTTP biggest problem is that the session token (that big string) can be easily intercepted (stolen), which means identity can be stolen
+
+  Why should you ensure that files on a web server are not being executed by root?
+  Because the root has permission to take many different actions like download anything, install, change..
+
+  What is WPA2?
+  Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) are two security protocols and security certification programs developed by the Wi-Fi Alliance to secure wireless computer networks. The Alliance defined these in response to serious weaknesses researchers had found in the previous system, Wired Equivalent Privacy (WEP).
+
+  What is public key cryptography?
+Public-key cryptography, or asymmetric cryptography, is any cryptographic system that uses pairs of keys: public keys which may be disseminated widely, and private keys which are known only to the owner. This accomplishes two functions: authentication, where the public key verifies that a holder of the paired private key sent the message, and encryption, where only the paired private key holder can decrypt the message encrypted with the public key.
+
+What is a certificate authority?
+Certificate Authorities, or Certificate Authorities / CAs, issue Digital Certificates. Digital Certificates are verifiable small data files that contain identity credentials to help websites, people, and devices represent their authentic online identity (authentic because the CA has verified the identity). CAs play a critical role in how the Internet operates and how transparent, trusted transactions can take place online. CAs issue millions of Digital Certificates each year, and these certificates are used to protect information, encrypt billions of transactions, and enable secure communication.

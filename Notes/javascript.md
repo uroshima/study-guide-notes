@@ -398,3 +398,20 @@ When the executor finishes the job, it should call one of the functions that it 
 2. reject(error) — to indicate that an error occurred:
      - sets state to "rejected",
      - sets result to error.
+
+What arguments does the Promise object take?
+It takes resolve and reject
+
+What arguments does the resolve function take?
+It takes onFulfilled
+
+What arguments does .then take?
+It takes onFulfilled and onRejected
+
+ What is Promise Chaining?
+ Promise Chaining is when we chain a promise after a promise is settled. The whole thing works, because a call to promise.then returns a promise, so that we can call the next .then on it.
+When a handler returns a value, it becomes the result of that promise, so the next .then is called with it.
+
+ How can you suspend the execution of a .then statement?
+ Normally, a value returned by a .then handler is immediately passed to the next handler. But there’s an exception.
+If the returned value is a promise, then the further execution is suspended until it settles. After that, the result of that promise is given to the next .then handler.
