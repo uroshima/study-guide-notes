@@ -90,13 +90,14 @@ Say you have three systems in your network. If one of them goes down, roughly a 
 
 What is RAID and what functionality can it give you?
 RAID is an acronym for Redundant Array of Independent Disks, which is a storage method that combines multiple physical disk drives into one virtual drive. A RAID setup can be faster than a single disk, and provide drive failure protection you can't get with a single disk.
+RAID0 allows you to use multiple hard drives as one, but does not give you the ability to recover data if one of them fails
 
  How do computers synchronize their clocks?
  All computers by default sync to a NTP (Network Time Protocol) server. Generally all computers get their time from these servers all over the world and sync to their local timezone.
 Unless you work in an office. Most times there are main servers in your company, that get their time for the above NTP servers. Then workstations get their time from the main servers.
 
 What is manchester coding?
-In telecommunication and data storage, Manchester code (also known as phase encoding, or PE) is a line code in which the encoding of each data bit is either low then high, or high then low, for equal time. It is a self-clocking signal with no DC component. As a result, electrical connections using a Manchester code are easily galvanically isolated.
+Manchester coding is a strategy to deal with clock slip. In telecommunication and data storage, Manchester code (also known as phase encoding, or PE) is a line code in which the encoding of each data bit is either low then high, or high then low, for equal time. It is a self-clocking signal with no DC component. As a result, electrical connections using a Manchester code are easily galvanically isolated.
 Manchester code derives its name from its development at the University of Manchester, where the coding was used to store data on the magnetic drum of the Manchester Mark 1 computer.
 
 What's memcache?
@@ -129,3 +130,15 @@ If load balancing can do such amazing things, why isn’t everyone using it?! Go
 
 What is the principle of Least Privilege?
 The principle of least privilege (POLP), an important concept in computer security, is the practice of limiting access rights for users to the bare minimum permissions they need to perform their work. Under POLP, users are granted permission to read, write or execute only the files or resources they need to do their jobs: In other words, the least amount of privilege necessary.
+
+Top 10 ways to speed up a website
+1. Minimize HTTP requests
+2. Minify and combine files
+3. Use asynchronous loading for CSS and JavaScript files
+4. Defer JavaScript loading
+5. Minimize time to first byte
+6. Reduce server response time
+7. Choose the right hosting option for your needs
+8. Run a compression audit
+9. Enable compression
+10. Enable browser caching

@@ -347,3 +347,54 @@ It does two things:
           window.test = 5;
 
           alert(test); // 5
+
+Explain Object.assign()
+The Object.assign() method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
+
+          const object1 = {
+            a: 1,
+            b: 2,
+            c: 3
+          };
+
+          const object2 = Object.assign({c: 4, d: 5}, object1);
+
+          console.log(object2.c, object2.d);
+          // expected output: 3 5
+
+Explain Object.create()
+The Object.create() method creates a new object, using an existing object as the prototype of the newly created object.
+
+          const person = {
+            isHuman: false,
+            printIntroduction: function () {
+              console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+            }
+          };
+
+          const me = Object.create(person);
+
+          me.name = "Matthew"; // "name" is a property set on "me", but not on "person"
+          me.isHuman = true; // inherited properties can be overwritten
+
+What is a Promise?
+Check this great article for more detailed explanation https://javascript.info/promise-basics
+The constructor syntax for a promise object is:
+
+          let promise = new Promise(function(resolve, reject) {
+            // executor (the producing code, "singer")
+          });
+
+The function passed to new Promise is called the executor. When the promise is created, this executor function runs automatically.The resulting promise object has internal properties:
+
+1. state — initially “pending”, then changes to either “fulfilled” or “rejected”,
+2. result — an arbitrary value of your choosing, initially undefined.
+
+When the executor finishes the job, it should call one of the functions that it gets as arguments:
+
+1. resolve(value) — to indicate that the job finished successfully:
+     - sets state to "fulfilled",
+     - sets result to value.
+2. reject(error) — to indicate that an error occurred:
+     - sets state to "rejected",
+     - sets result to error.
