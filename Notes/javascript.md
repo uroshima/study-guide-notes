@@ -415,3 +415,71 @@ When a handler returns a value, it becomes the result of that promise, so the ne
  How can you suspend the execution of a .then statement?
  Normally, a value returned by a .then handler is immediately passed to the next handler. But there’s an exception.
 If the returned value is a promise, then the further execution is suspended until it settles. After that, the result of that promise is given to the next .then handler.
+
+When would you want to use Promise.resolve()?
+    let promise = Promise.resolve(value); ==> Returns a resolved promise with the given value.
+Same as:
+    let promise = new Promise(resolve => resolve(value));
+The method is used when we already have a value, but would like to have it “wrapped” into a promise.
+For instance, the loadCached function below fetches the url and remembers the result, so that future calls on the same URL return it immediately:
+
+        function loadCached(url) {
+          let cache = loadCached.cache || (loadCached.cache = new Map());
+
+          if (cache.has(url)) {
+            return Promise.resolve(cache.get(url)); // (****)
+          }
+
+          return fetch(url)
+            .then(response => response.text())
+            .then(text => {
+              cache.set(url,text);
+              return text;
+            });
+        }
+
+We can use loadCached(url).then(…), because the function is guaranteed to return a promise. That’s the purpose Promise.resolve in the line (****): it makes sure the interface unified. We can always use .then after loadCached.
+
+Explain how Promise.all works.
+The method to run many promises in parallel and wait till all of them are ready.
+The syntax is:
+
+      let promise = Promise.all(iterable);
+It takes an iterable object with promises, technically it can be any iterable, but usually it’s an array, and returns a new promise. The new promise resolves with when all of them are settled and has an array of their results.
+For instance, the Promise.all below settles after 3 seconds, and then its result is an array [1, 2, 3]:
+
+       Promise.all([
+        new Promise((resolve, reject) => setTimeout(() => resolve(1), 3000)), // 1
+        new Promise((resolve, reject) => setTimeout(() => resolve(2), 2000)), // 2
+        new Promise((resolve, reject) => setTimeout(() => resolve(3), 1000))  // 3
+      ]).then(alert); // 1,2,3 when promises are ready: each promise contributes an array member
+
+What happens when you pass a non-promise object in the iterable you pass to Promise.all?
+Normally, Promise.all(iterable) accepts an iterable (in most cases an array) of promises. But if any of those objects is not a promise, it’s wrapped in Promise.resolve.
+For instance, here the results are [1, 2, 3]:
+
+       Promise.all([
+        new Promise((resolve, reject) => {
+          setTimeout(() => resolve(1), 1000)
+        }),
+        2, // treated as Promise.resolve(2)
+        3  // treated as Promise.resolve(3)
+      ]).then(alert); // 1, 2, 3
+
+So we are able to pass non-promise values to Promise.all where convenient.
+
+What is Promise.race?
+Similar to Promise.all takes an iterable of promises, but instead of waiting for all of them to finish – waits for the first result (or error), and goes on with it.
+The syntax is:
+
+      let promise = Promise.race(iterable);
+
+For instance, here the result will be 1:
+
+       Promise.race([
+        new Promise((resolve, reject) => setTimeout(() => resolve(1), 1000)),
+        new Promise((resolve, reject) => setTimeout(() => reject(new Error("Whoops!")), 2000)),
+        new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000))
+      ]).then(alert); // 1
+      
+So, the first result/error becomes the result of the whole Promise.race. After the first settled promise “wins the race”, all further results/errors are ignored.

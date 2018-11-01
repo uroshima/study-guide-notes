@@ -33,3 +33,31 @@ Each event may be useful:
  1. DOMContentLoaded handler runs when the document is loaded and does not wait for the image to load. DOMContentLoaded may only happen after all such scripts are executed. The only exception are external scripts with async and defer attributes. They tell the browser to continue processing without waiting for the scripts. This lets the user see the page before scripts finish loading, which is good for performance. External style sheets don’t affect DOM, and so DOMContentLoaded does not wait for them.
 But there’s a pitfall: if we have a script after the style, then that script must wait for the stylesheet to execute.
 2. The load event on the window object triggers when the whole page is loaded including styles, images and other resources.
+
+What kind of object is returned by .childNodes?
+The childNodes property returns a collection of a node's child nodes, as a NodeList object.
+The nodes in the collection are sorted as they appear in the source code and can be accessed by index numbers. The index starts at 0.
+Note: Whitespace inside elements is considered as text, and text is considered as nodes. Comments are also considered as nodes.
+Tip: You can use the length property of the NodeList object to determine the number of child nodes, then you can loop through all child nodes and extract the info you want.
+This property is read-only.
+Tip: To return a collection of a node's element nodes (excluding text and comment nodes), use the children property.
+Tip: element.childNodes[0] will produce the same result as the firstChild property.
+
+Talk about the different ways your can access DOM elements in JS?
+Often, with JavaScript, you want to manipulate HTML elements.
+To do so, you have to find the elements first. There are a couple of ways to do this:
+ - Finding HTML elements by id
+ - Finding HTML elements by tag name
+ - Finding HTML elements by class name
+ - Finding HTML elements by CSS selectors
+ - Finding HTML elements by HTML object collections
+
+ What's the difference between calling .childnodes and calling .children?
+ .children is a property of an Element. Only Elements have children, and these children are all of type Element.
+However .childNodes is a property of Node. .childNodes can contain any node.
+So a concrete example would be
+
+        var el = document.createElement("div");
+        el.textContent = "foo"
+        el.childNodes.length === 1; // TextNode is a node child
+        el.children.length === 0; // no Element children
