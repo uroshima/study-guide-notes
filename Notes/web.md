@@ -168,3 +168,21 @@ Certificate Authorities, or Certificate Authorities / CAs, issue Digital Certifi
 Explain Diffie-Hellman key exchange. Why does it work?
 Diffie-Hellman is a way of generating a shared secret between two people in such a way that the secret can't be seen by observing the communication. That's an important distinction: You're not sharing information during the key exchange, you're creating a key together.
 This is particularly useful because you can use this technique to create an encryption key with someone, and then start encrypting your traffic with that key. And even if the traffic is recorded and later analyzed, there's absolutely no way to figure out what the key was, even though the exchanges that created it may have been visible. This is where perfect forward secrecy comes from. Nobody analyzing the traffic at a later date can break in because the key was never saved, never transmitted, and never made visible anywhere.
+
+What is same-origin policy?
+Same Origin Policy (SOP), also called Single Origin Policy, is a security measure used in Web browser programming languages such as JavaScript and Ajax to protect the confidentiality and integrity of information. Same Origin Policy prevents a web site's scripts from accessing and interacting with scripts used on other sites.
+
+What is JSONP?
+JSONP is a method for sending JSON data without worrying about cross-domain issues.
+JSONP does not use the XMLHttpRequest object.
+JSONP uses the <script> tag instead.
+JSONP stands for JSON with Padding.
+Requesting a file from another domain can cause problems, due to cross-domain policy.
+Requesting an external script from another domain does not have this problem.
+JSONP uses this advantage, and request files using the script tag instead of the XMLHttpRequest object.
+
+What does data before action mean in OOP?
+It means that the way OOP works is that it approaches a problem with decomposing the data into a bunch of different data types first before moving to approach the functions.
+
+What is the difference between public and private methods?
+A public method is one that can be accessed by any other object whereas a private method is not. Private methods cannot be accessed by any other class, it can only be accessed by its own. 
