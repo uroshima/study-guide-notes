@@ -185,4 +185,7 @@ What does data before action mean in OOP?
 It means that the way OOP works is that it approaches a problem with decomposing the data into a bunch of different data types first before moving to approach the functions.
 
 What is the difference between public and private methods?
-A public method is one that can be accessed by any other object whereas a private method is not. Private methods cannot be accessed by any other class, it can only be accessed by its own. 
+A public method is one that can be accessed by any other object whereas a private method is not. Private methods cannot be accessed by any other class, it can only be accessed by its own.
+
+Compare and contrast CSRF and XSS.
+Fundamental difference is that CSRF (Cross-site Request forgery) happens in authenticated sessions when the server trusts the user/browser, while XSS (Cross-Site scripting) doesn't need an authenticated session and can be exploited when the vulnerable website doesn't do the basics of validating or escaping input.

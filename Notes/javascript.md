@@ -513,3 +513,17 @@ The keyword await makes JavaScript wait until that promise settles and returns i
 The function execution “pauses” at the line (****) and resumes when the promise settles, with result becoming its result. So the code above shows “done!” in one second.
 Let’s emphasize: await literally makes JavaScript wait until the promise settles, and then go on with the result. That doesn’t cost any CPU resources, because the engine can do other jobs meanwhile: execute other scripts, handle events etc.
 It’s just a more elegant syntax of getting the promise result than promise.then, easier to read and write.
+
+What is partial function application?
+Creating a new function by fixing some parameters of the existing one.
+
+What is the difference between class inheritance and class composition?
+Though both Inheritance and Composition provides code reusablility, main difference between Composition and Inheritance in Java is that Composition allows reuse of code without extending it but for Inheritance you must extend the class for any reuse of code or functionality.
+
+What is method overriding?
+If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
+In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class, it is known as method overriding.
+
+What is polymorphism?
+The word polymorphism is used in various contexts and describes situations in which something occurs in several different forms. In computer science, it describes the concept that objects of different types can be accessed through the same interface. Each type can provide its own, independent implementation of this interface. It is one of the core concepts of object-oriented programming (OOP).
+If you’re wondering if an object is polymorphic, you can perform a simple test. If the object successfully passes multiple is-a or instanceof tests, it’s polymorphic. As I’ve described in my post about inheritance, all Java classes extend the class Object. Due to this, all objects in Java are polymorphic because they pass at least two instanceof checks.
