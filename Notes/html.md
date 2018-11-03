@@ -61,3 +61,38 @@ So a concrete example would be
         el.textContent = "foo"
         el.childNodes.length === 1; // TextNode is a node child
         el.children.length === 0; // no Element children
+
+What does console.dir() do?
+Most browsers support two commands in their developer tools: console.log and console.dir. They output their arguments to the console. For JavaScript objects these commands usually do the same.
+But for DOM elements they are different:
+
+1. console.log(elem) shows the element DOM tree.
+2. console.dir(elem) shows the element as a DOM object, good to explore its properties.
+
+What happens if you set innerHTML to a script?
+The innerHTML property allows to get the HTML inside the element as a string.
+We can also modify it. So it’s one of most powerful ways to change the page.
+The example shows the contents of document.body and then replaces it completely:
+
+           <body>
+            <p>A paragraph</p>
+            <div>A div</div>
+
+            <script>
+              alert( document.body.innerHTML ); // read the current contents
+              document.body.innerHTML = 'The new BODY!'; // replace it
+            </script>
+
+          </body>
+
+What does the .hidden property do?
+The “hidden” attribute and the DOM property specifies whether the element is visible or not. We can use it in HTML or assign using JavaScript, like this:
+
+<div>Both divs below are hidden</div>
+<div hidden>With the attribute "hidden"</div>
+<div id="elem">JavaScript assigned the property "hidden"</div>
+<script>
+  elem.hidden = true;
+</script>
+
+Technically, hidden works the same as style="display:none". But it’s shorter to write.

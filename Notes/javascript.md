@@ -481,5 +481,35 @@ For instance, here the result will be 1:
         new Promise((resolve, reject) => setTimeout(() => reject(new Error("Whoops!")), 2000)),
         new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000))
       ]).then(alert); // 1
-      
+
 So, the first result/error becomes the result of the whole Promise.race. After the first settled promise “wins the race”, all further results/errors are ignored.
+
+What does the async keyword do?
+The word “async” before a function means one simple thing: a function always returns a promise. If the code has return <non-promise> in it, then JavaScript automatically wraps it into a resolved promise with that value.
+
+For instance, this code returns a resolved promise with the result of 1, let’s test it:
+
+           async function f() {
+            return 1;
+          }
+
+          f().then(alert); // 1
+
+What does the await keyword do?
+The keyword await makes JavaScript wait until that promise settles and returns its result. Here’s example with a promise that resolves in 1 second:
+
+          async function f() {
+
+            let promise = new Promise((resolve, reject) => {
+              setTimeout(() => resolve("done!"), 1000)
+            });
+
+            let result = await promise; // wait till the promise resolves (****)
+
+            alert(result); // "done!"
+          }
+          f();
+
+The function execution “pauses” at the line (****) and resumes when the promise settles, with result becoming its result. So the code above shows “done!” in one second.
+Let’s emphasize: await literally makes JavaScript wait until the promise settles, and then go on with the result. That doesn’t cost any CPU resources, because the engine can do other jobs meanwhile: execute other scripts, handle events etc.
+It’s just a more elegant syntax of getting the promise result than promise.then, easier to read and write.

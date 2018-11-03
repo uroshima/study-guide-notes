@@ -47,3 +47,11 @@ Vertical scalability, on the other hand, increases capacity by adding more resou
  Describe the effects of using Group By and Having
  A group by is a query that takes a table and summarizes it into another table. You summarize the original table by grouping the original table into subsets (based upon the attributes that you specify in the group by). Each of these groups will yield one tuple.
 The Having is simply equivalent to a WHERE clause after the group by has executed and before the select part of the query is computed.
+
+What is SQL injection? How do you avoid it?
+For more details visit https://www.w3schools.com/sql/sql_injection.asp
+SQL injection is a code injection technique that might destroy your database.
+SQL injection is one of the most common web hacking techniques.
+SQL injection is the placement of malicious code in SQL statements, via web page input. SQL injection usually occurs when you ask a user for input, like their username/userid, and instead of a name/id, the user gives you an SQL statement that you will unknowingly run on your database.
+To protect a web site from SQL injection, you can use SQL parameters.
+SQL parameters are values that are added to an SQL query at execution time, in a controlled manner.
