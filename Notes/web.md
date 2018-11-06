@@ -14,12 +14,6 @@ This is the brief answer:
 Why do we need a DNS?
 The Domain Name System (DNS) is often referred to as the backbone of the internet. It’s run by many engineers and their organizations, it ultimately shapes the future of the internet. We need DNS because it manages the whole process of how the internet works and how it is organized (we can use the example of what happens when you type in google.com and press enter)
 
-Explain TCP, and why it is a necessary protocol
-TCP/IP (Transmission Control Protocol/Internet Protocol) is a set of allows anyone with a computer, modem, and an Internet service provider to access and share information over the Internet.Both TCP and IP, two separate protocols that work hand-in-hand, perform chores that manage and guide the general mobility of data packets over the Internet.
-
-What is the difference between TCP and UDP?
-TCP is a connection oriented stream over an IP network. It guarantees that all sent packets will reach the destination in the correct order. This imply the use of acknowledgement packets sent back to the sender, and automatic retransmission, causing additional delays and a general less efficient transmission than UDP.
-
 What are the common HTTP methods? When are they used, and what do they accomplish? (This is a big one)
 The set of common methods for HTTP/1.1 is defined below and this set can be expanded based on requirements. These method names are case sensitive and they must be used in uppercase.
 
@@ -63,37 +57,29 @@ localStorage and sessionStorage are perfect for persisting non-sensitive data ne
 Cookies - this is also true for cookies, these can be trivially tampered with by the user, and data can also be read from them in plain text - so if you are wanting to store sensitive data then the session is really your only option. If you are not using SSL, cookie information can also be intercepted in transit, especially on an open wifi. As cookies are used for authentication purposes and persistence of user data, all cookies valid for a page are sent from the browser to the server for every request to the same domain - this includes the original page request, any subsequent Ajax requests, all images, stylesheets, scripts, and fonts. For this reason, cookies should not be used to store large amounts of information.
 In terms of capabilities, cookies, sessionStorage, and localStorage only allow you to store strings. Session storage will generally allow you to store any primitives or objects supported by your Server Side language/framework.
 
- What is XSS and what is the danger of it?
- Cross-site Scripting (XSS) refers to client-side code injection attack wherein an attacker can execute malicious scripts (also commonly referred to as a malicious payload) into a legitimate website or web application. XSS is amongst the most rampant of web application vulnerabilities and occurs when a web application makes use of unvalidated or unencoded user input within the output it generates.
-By leveraging XSS, an attacker does not target a victim directly. Instead, an attacker would exploit a vulnerability within a website or web application that the victim would visit, essentially using the vulnerable website as a vehicle to deliver a malicious script to the victim’s browser.
-XSS in combination with social engineering, allow attackers to pull off advanced attacks including cookie theft, keylogging, phishing and identity theft. Critically, XSS vulnerabilities provide the perfect ground for attackers to escalate attacks to more serious ones.
+When are two pages considered to have the same origin?
+Two pages have the same origin if the protocol, port (if one is specified), and host are the same for both pages.
 
- What is a CSRF Attack?
- Cross Site Request Forgery (CSRF) is an attack whereby a malicious entity tricks a victim into performing actions on behalf of the attacker. The impact of the attack would depend on the level of permissions that the victim being exploited has. The actions being perpetrated by the attacker will surely have a greater effect if the victim performing the actions is at an administrative level versus a low level user, with less privileges. CSRF attacks take advantage of the fact that a web application completely trusts a user, once it can confirm that the user is indeed who they say they are.
-
-  When are two pages considered to have the same origin?
-  Two pages have the same origin if the protocol, port (if one is specified), and host are the same for both pages.
-
- What is CORS?
- Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin. A web application makes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, and port) than its own origin.
+What is CORS?
+Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin. A web application makes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, and port) than its own origin.
 
 What is Round Robin?
 Round robin is the simplest form of load balancing. It rotates through the IP addresses in the configuration with no regard to if those servers are even up.
 Since there is no way to tell if those systems are available or not, you could be sending traffic to a slow or unhealthy server.
 Say you have three systems in your network. If one of them goes down, roughly a third of your traffic will still be pointed to that system.
 
- What is Round Robin DNS binding?
- Round Robin DNS is a technique of load distribution, load balancing, or fault-tolerance provisioning multiple, redundant Internet Protocol service hosts, e.g., Web server, FTP servers, by managing the Domain Name System's (DNS) responses to address requests from client computers according to an appropriate statistical model.
+What is Round Robin DNS binding?
+Round Robin DNS is a technique of load distribution, load balancing, or fault-tolerance provisioning multiple, redundant Internet Protocol service hosts, e.g., Web server, FTP servers, by managing the Domain Name System's (DNS) responses to address requests from client computers according to an appropriate statistical model.
 
- What is striping when talking about writing to a Hard drive?
- Disk striping is the process of dividing a body of data into blocks and spreading the data blocks across multiple storage devices, such as hard disks or solid-state drives (SSDs).
+What is striping when talking about writing to a Hard drive?
+Disk striping is the process of dividing a body of data into blocks and spreading the data blocks across multiple storage devices, such as hard disks or solid-state drives (SSDs).
 
 What is RAID and what functionality can it give you?
 RAID is an acronym for Redundant Array of Independent Disks, which is a storage method that combines multiple physical disk drives into one virtual drive. A RAID setup can be faster than a single disk, and provide drive failure protection you can't get with a single disk.
 RAID0 allows you to use multiple hard drives as one, but does not give you the ability to recover data if one of them fails
 
- How do computers synchronize their clocks?
- All computers by default sync to a NTP (Network Time Protocol) server. Generally all computers get their time from these servers all over the world and sync to their local timezone.
+How do computers synchronize their clocks?
+All computers by default sync to a NTP (Network Time Protocol) server. Generally all computers get their time from these servers all over the world and sync to their local timezone.
 Unless you work in an office. Most times there are main servers in your company, that get their time for the above NTP servers. Then workstations get their time from the main servers.
 
 What is manchester coding?
@@ -110,9 +96,6 @@ Cache is useful when you have a database-driven website that gets high amounts o
 
 What is Address Resolution Protocol?
 Address Resolution Protocol (ARP) is a protocol for mapping an Internet Protocol address (IP address) to a physical machine address that is recognized in the local network. For example, in IP Version 4, the most common level of IP in use today, an address is 32 bits long. In an Ethernet local area network, however, addresses for attached devices are 48 bits long. (The physical machine address is also known as a Media Access Control or MAC address.) A table, usually called the ARP cache, is used to maintain a correlation between each MAC address and its corresponding IP address. ARP provides the protocol rules for making this correlation and providing address conversion in both directions.
-
-What is the purpose of TCP?
-TCP (Transmission Control Protocol) is a standard that defines how to establish and maintain a network conversation via which application programs can exchange data.TCP works with the Internet Protocol (IP), which defines how computers send packets of data to each other.
 
 What is Load Balancing?
 For more details check this link http://news.constellix.com/dns-load-balancing-what-is-it-and-why-do-you-need-it/
@@ -144,34 +127,6 @@ Top 10 ways to speed up a website
 10. Enable browser caching
 also check this link for more details https://browserdiet.com/
 
-Why is FTP a bad idea?
-FTP, File Transfer Protocol, has been around since the beginning of the internet in the early 1970s. It transfered files when the internet was a safer, more trusting, place. That isn’t the case anymore. Using FTP to host files is probably a bad idea for almost everyone. FTP is like Telnet. No encryption is used for anything. These days, we know that is bad. There are lots of important issues with using plain FTP, but the biggest two are:
-
-1. Passwords are transmitted un-encrypted – this is reason enough to not use it anymore
-2. Data is transmitted un-encrypted – this may or may not be that important to any specific download
-
- What kinds of information is at risk when comunicating over HTTP?
- HTTP biggest problem is that the session token (that big string) can be easily intercepted (stolen), which means identity can be stolen
-
-  Why should you ensure that files on a web server are not being executed by root?
-  Because the root has permission to take many different actions like download anything, install, change..
-
-  What is WPA2?
-  Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) are two security protocols and security certification programs developed by the Wi-Fi Alliance to secure wireless computer networks. The Alliance defined these in response to serious weaknesses researchers had found in the previous system, Wired Equivalent Privacy (WEP).
-
-  What is public key cryptography?
-Public-key cryptography, or asymmetric cryptography, is any cryptographic system that uses pairs of keys: public keys which may be disseminated widely, and private keys which are known only to the owner. This accomplishes two functions: authentication, where the public key verifies that a holder of the paired private key sent the message, and encryption, where only the paired private key holder can decrypt the message encrypted with the public key.
-
-What is a certificate authority?
-Certificate Authorities, or Certificate Authorities / CAs, issue Digital Certificates. Digital Certificates are verifiable small data files that contain identity credentials to help websites, people, and devices represent their authentic online identity (authentic because the CA has verified the identity). CAs play a critical role in how the Internet operates and how transparent, trusted transactions can take place online. CAs issue millions of Digital Certificates each year, and these certificates are used to protect information, encrypt billions of transactions, and enable secure communication.
-
-Explain Diffie-Hellman key exchange. Why does it work?
-Diffie-Hellman is a way of generating a shared secret between two people in such a way that the secret can't be seen by observing the communication. That's an important distinction: You're not sharing information during the key exchange, you're creating a key together.
-This is particularly useful because you can use this technique to create an encryption key with someone, and then start encrypting your traffic with that key. And even if the traffic is recorded and later analyzed, there's absolutely no way to figure out what the key was, even though the exchanges that created it may have been visible. This is where perfect forward secrecy comes from. Nobody analyzing the traffic at a later date can break in because the key was never saved, never transmitted, and never made visible anywhere.
-
-What is same-origin policy?
-Same Origin Policy (SOP), also called Single Origin Policy, is a security measure used in Web browser programming languages such as JavaScript and Ajax to protect the confidentiality and integrity of information. Same Origin Policy prevents a web site's scripts from accessing and interacting with scripts used on other sites.
-
 What is JSONP?
 JSONP is a method for sending JSON data without worrying about cross-domain issues.
 JSONP does not use the XMLHttpRequest object.
@@ -187,5 +142,31 @@ It means that the way OOP works is that it approaches a problem with decomposing
 What is the difference between public and private methods?
 A public method is one that can be accessed by any other object whereas a private method is not. Private methods cannot be accessed by any other class, it can only be accessed by its own.
 
-Compare and contrast CSRF and XSS.
-Fundamental difference is that CSRF (Cross-site Request forgery) happens in authenticated sessions when the server trusts the user/browser, while XSS (Cross-Site scripting) doesn't need an authenticated session and can be exploited when the vulnerable website doesn't do the basics of validating or escaping input.
+System Design
+What are the 9 areas of inquiry that you you should define froma high level before diving into implementation?
+- Features
+- Define API's
+- Availability
+- Latency Performance
+- Scalability
+- Durability
+- Class Diagram
+- Security & Privacy
+- Cost Effective
+
+Why is caching important in system design?
+Caching is going to speed up our requests. If we know some data is going to be used more frequently, we can store it in a cache.
+
+What is partial function application?
+Creating a new function by fixing some parameters of the existing one.
+
+What is the difference between class inheritance and class composition?
+Though both Inheritance and Composition provides code reusablility, main difference between Composition and Inheritance in Java is that Composition allows reuse of code without extending it but for Inheritance you must extend the class for any reuse of code or functionality.
+
+What is method overriding?
+If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
+In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class, it is known as method overriding.
+
+What is polymorphism?
+The word polymorphism is used in various contexts and describes situations in which something occurs in several different forms. In computer science, it describes the concept that objects of different types can be accessed through the same interface. Each type can provide its own, independent implementation of this interface. It is one of the core concepts of object-oriented programming (OOP).
+If you’re wondering if an object is polymorphic, you can perform a simple test. If the object successfully passes multiple is-a or instanceof tests, it’s polymorphic. As I’ve described in my post about inheritance, all Java classes extend the class Object. Due to this, all objects in Java are polymorphic because they pass at least two instanceof checks.
