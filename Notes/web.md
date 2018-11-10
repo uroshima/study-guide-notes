@@ -170,3 +170,15 @@ In other words, If a subclass provides the specific implementation of the method
 What is polymorphism?
 The word polymorphism is used in various contexts and describes situations in which something occurs in several different forms. In computer science, it describes the concept that objects of different types can be accessed through the same interface. Each type can provide its own, independent implementation of this interface. It is one of the core concepts of object-oriented programming (OOP).
 If you’re wondering if an object is polymorphic, you can perform a simple test. If the object successfully passes multiple is-a or instanceof tests, it’s polymorphic. As I’ve described in my post about inheritance, all Java classes extend the class Object. Due to this, all objects in Java are polymorphic because they pass at least two instanceof checks.
+
+What is the idea of creating services (in Rails)?
+It is particularly useful when we need a place to define complex actions, processes with many steps, callbacks or interactions with multiple models which do not fit anywhere else. Service objects are also commonly used to mitigate problems with model callbacks that interact with external classes
+
+What is a bloom Filter?
+It is a space efficient probabilistic based data structure. It is used to decide if an element belongs to set or not.
+
+What is PAXOS?
+It is used to derive consensus over distributed hosts.
+
+What is Map Reduce?
+Filtering, sorting and summarizing data
