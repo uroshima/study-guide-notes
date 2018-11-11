@@ -182,3 +182,21 @@ It is used to derive consensus over distributed hosts.
 
 What is Map Reduce?
 Filtering, sorting and summarizing data
+
+Explain Websockets
+“WebSockets” is an advanced technology that allows real-time interactive communication between the client browser and a server. It uses a completely different protocol that allows bidirectional data flow, making it unique against HTTP. WebSockets is a technology that allows for opening an interactive communications session between a user’s browser and a server. With this technology, a user can send messages to a server and receive event-driven responses without requiring long-polling, i.e. without having to constantly check the server for a reply. Think about when you are replying to an email in Gmail, and at the bottom of your screen you see an alert pop up saying “1 unread message from [insert some email address here]” coming from the person you were just responding to. That kind of real-time feedback is due to technologies like WebSockets!
+What is the web socket good for?
+- Real-time applications
+- Chat apps
+- IoT (internet of things)
+- Online multiplayer games
+
+Tiny URL
+Go here for more details https://www.youtube.com/watch?v=fMZMm_0ZhK4
+Basically, TinyURL is a URL shortening service, a web service that provides short aliases for redirection of long URLs. There are many other similar services like Google URL Shortener, Bitly etc..
+For example, URL http://blog.gainlo.co/index.php/2015/10/22/8-things-you-need-to-know-before-system-design-interviews/ is long and hard to remember, TinyURL can create a alias for it – http://tinyurl.com/j7ve58y. If you click the alias, it’ll redirect you to the original URL.
+To make things easier, we can assume the alias is something like http://tinyurl.com/<alias_hash> and alias_hash is a fixed length string.
+If the length is 7 containing [A-Z, a-z, 0-9], we can serve 62 ^ 7 ~= 3500 billion URLs. It’s said that there are ~644 million URLs at the time of this writing.
+To begin with, let’s store all the mappings in a single database. A straightforward approach is using alias_hash as the ID of each mapping, which can be generated as a random string of length 7.
+Therefore, we can first just store <ID, URL>. When a user inputs a long URL “http://www.gainlo.co”, the system creates a random 7-character string like “abcd123” as ID and inserts entry <“abcd123”, “http://www.gainlo.co”> into the database.
+In the run time, when someone visits http://tinyurl.com/abcd123, we look up by ID “abcd123” and redirect to the corresponding URL “http://www.gainlo.co”.
