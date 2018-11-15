@@ -14,7 +14,7 @@ This is the brief answer:
 Why do we need a DNS?
 The Domain Name System (DNS) is often referred to as the backbone of the internet. It’s run by many engineers and their organizations, it ultimately shapes the future of the internet. We need DNS because it manages the whole process of how the internet works and how it is organized (we can use the example of what happens when you type in google.com and press enter)
 
-What are the common HTTP methods? When are they used, and what do they accomplish? (This is a big one)
+What are the common HTTP methods? When are they used, and what do they accomplish?
 The set of common methods for HTTP/1.1 is defined below and this set can be expanded based on requirements. These method names are case sensitive and they must be used in uppercase.
 
 Method and Description:
@@ -200,3 +200,78 @@ If the length is 7 containing [A-Z, a-z, 0-9], we can serve 62 ^ 7 ~= 3500 billi
 To begin with, let’s store all the mappings in a single database. A straightforward approach is using alias_hash as the ID of each mapping, which can be generated as a random string of length 7.
 Therefore, we can first just store <ID, URL>. When a user inputs a long URL “http://www.gainlo.co”, the system creates a random 7-character string like “abcd123” as ID and inserts entry <“abcd123”, “http://www.gainlo.co”> into the database.
 In the run time, when someone visits http://tinyurl.com/abcd123, we look up by ID “abcd123” and redirect to the corresponding URL “http://www.gainlo.co”.
+
+
+For Interview !!
+
+What is SSL?
+
+  Secure Sockets Layer (SSL) is a standard security technology for establishing an encrypted link between a server and a client—typically a web server (website) and a browser, or a mail server and a mail client (e.g., Outlook).
+
+  SSL allows sensitive information such as credit card numbers, social security numbers, and login credentials to be transmitted securely. Normally, data sent between browsers and web servers is sent in plain text—leaving you vulnerable to eavesdropping. If an attacker is able to intercept all data being sent between a browser and a web server, they can see and use that information.
+
+  More specifically, SSL is a security protocol. Protocols describe how algorithms should be used. In this case, the SSL protocol determines variables of the encryption for both the link and the data being transmitted.
+
+  All browsers have the capability to interact with secured web servers using the SSL protocol. However, the browser and the server need what is called an SSL Certificate to be able to establish a secure connection.
+
+  SSL secures millions of peoples’ data on the Internet every day, especially during online transactions or when transmitting confidential information. Internet users have come to associate their online security with the lock icon that comes with an SSL-secured website or green address bar that comes with an Extended Validation SSL-secured website. SSL-secured websites also begin with https rather than http.
+
+
+What is an SSL Certificate and How Does it Work?
+
+  SSL certificates create an encrypted connection and establish trust.
+  One of the most important components of online business is creating a trusted environment where potential customers feel confident in making purchases. SSL certificates create a foundation of trust by establishing a secure connection. To ensure visitors their connection is secure, browsers provide visual cues, such as a lock icon or a green bar.
+
+  SSL certificates have a key pair: a public and a private key. These keys work together to establish an encrypted connection. The certificate also contains what is called the “subject,” which is the identity of the certificate/website owner.
+
+  To get a certificate, you must create a Certificate Signing Request (CSR) on your server. This process creates a private key and public key on your server. The CSR data file that you send to the SSL Certificate issuer (called a Certificate Authority or CA) contains the public key. The CA uses the CSR data file to create a data structure to match your private key without compromising the key itself. The CA never sees the private key.
+
+  Once you receive the SSL certificate, you install it on your server. You also install an intermediate certificate that establishes the credibility of your SSL Certificate by tying it to your CA’s root certificate. The instructions for installing and testing your certificate will be different depending on your server.
+
+
+How Does the SSL Certificate Create a Secure Connection?
+
+  When a browser attempts to access a website that is secured by SSL, the browser and the web server establish an SSL connection using a process called an “SSL Handshake” (see diagram below). Note that the SSL Handshake is invisible to the user and happens instantaneously.
+
+  Essentially, three keys are used to set up the SSL connection: the public, private, and session keys. Anything encrypted with the public key can only be decrypted with the private key, and vice versa.
+
+  Because encrypting and decrypting with private and public key takes a lot of processing power, they are only used during the SSL Handshake to create a symmetric session key. After the secure connection is made, the session key is used to encrypt all transmitted data.
+
+  - Browser connects to a web server (website) secured with SSL (https). Browser requests that the server identify itself.
+  - Server sends a copy of its SSL Certificate, including the server’s public key.
+  - Browser checks the certificate root against a list of trusted CAs and that the certificate is unexpired, unrevoked, and that its common name is valid for the website that it is connecting to. If the browser trusts the certificate, it creates, encrypts, and sends back a symmetric session key using the server’s public key.
+  - Server decrypts the symmetric session key using its private key and sends back an acknowledgement encrypted with the session key to start the encrypted session.
+  - Server and Browser now encrypt all transmitted data with the session key.
+
+Application High Availability concepts
+https://docs.oracle.com/cd/A91202_01/901_doc/rac.901/a89867/pshavdtl.htm
+
+Disaster Recovery
+Disaster recovery (DR) is an area of security planning that aims to protect an organization from the effects of significant negative events. DR allows an organization to maintain or quickly resume mission-critical functions following a disaster.
+More here https://searchdisasterrecovery.techtarget.com/definition/disaster-recovery
+
+Security Concepts ( Eg: Top 10 Owasp (Open Web Application Security Project))
+https://www.greycampus.com/blog/information-security/owasp-top-vulnerabilities-in-web-applications
+OWASP (Open web application security project) community helps organizations develop secure applications. They come up with standards, freeware tools and conferences that help organizations as well as researchers. OWASP top 10 is the list of top 10 application vulnerabilities along with the risk, impact, and countermeasures. The list is usually refreshed in every 3-4 years.
+
+1. Injection
+2. Broken Authentication
+3. Sensitive data exposure
+4. XML External Entities (XXE)
+5. Broken Access control
+6. Security misconfigurations
+7. Cross Site Scripting (XSS)
+8. Insecure Deserialization
+9. Using Components with known vulnerabilities
+10. Insufficient logging and monitoring
+
+
+Network architecture
+https://study.com/academy/lesson/network-architecture-tiered-peer-to-peer.html
+There are several ways in which a computer network can be designed. Network architecture refers to how computers are organized in a system and how tasks are allocated between these computers. Two of the most widely used types of network architecture are peer-to-peer and client/server. Client/server architecture is also called 'tiered' because it uses multiple levels. This lesson will discuss each of these two types in more detail.
+
+Software Development Life Cycle – Different Methodologies
+https://melsatar.blog/2012/03/15/software-development-life-cycle-models-and-methodologies/
+
+Project Management Life Cycle
+https://www.smartsheet.com/blog/demystifying-5-phases-project-management
