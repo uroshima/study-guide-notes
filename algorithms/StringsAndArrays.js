@@ -139,12 +139,36 @@ function compression(str1) {
 // Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes,
 // write a method to rotate the image by 90 degrees
 function rotateMatrix(matrix) {
-  let len = matrix.length
+  let len = matrix.length;
   let newMatrix = Array(len).fill().map(a => Array(len)); // creates two-dimensional array
   for (let i = 0; i < len; i++) {
     let row = matrix[i];
     for (let j = 0; j < row.length; j++) {
       newMatrix[len - 1 - j][i] = matrix[i][j]; //rotate the element for 90 degrees to the left
+    }
+  }
+  return newMatrix;
+}
+// Time Complexity is O(n^2) since we have to loop through all the elements in the matrix
+
+// Write an algorithm such that if an element in an MxM matrix is 0, it's entire row and column are set to zero
+function zeroMatrix(matrix) {
+  let len = matrix.length
+  let newMatrix = Array(len).fill().map(a => Array(len)); // creates two-dimensional array
+
+  for (let i = 0; i < len; i++) {
+    let row = matrix[i];
+    if (row.indexOf(0) != -1) { // if there is 0 in the row, sets the whole row to 0's
+      newMatrix[i] = new Array(len).fill(0);
+      for (let k = 0; k < row.length; k++) { // and also sets the whole column to 0's
+        newMatrix[k][i] = 0;
+      }
+    } else {
+      for (let j = 0; j < row.length; j++) {
+        if (newMatrix[i][j] != 0) { // if there is no 0 already from the previous condition then it assigns a value
+          newMatrix[i][j] = matrix[i][j];
+        }
+      }
     }
   }
   return newMatrix;
