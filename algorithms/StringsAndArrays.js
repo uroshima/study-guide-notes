@@ -135,3 +135,18 @@ function compression(str1) {
   return newStr1.length > str1.length ? str1 : newStr1;
 }
 // Time Complexity is O(n)
+
+// Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes,
+// write a method to rotate the image by 90 degrees
+function rotateMatrix(matrix) {
+  let len = matrix.length
+  let newMatrix = Array(len).fill().map(a => Array(len)); // creates two-dimensional array
+  for (let i = 0; i < len; i++) {
+    let row = matrix[i];
+    for (let j = 0; j < row.length; j++) {
+      newMatrix[len - 1 - j][i] = matrix[i][j]; //rotate the element for 90 degrees to the left
+    }
+  }
+  return newMatrix;
+}
+// Time Complexity is O(n^2) since we have to loop through all the elements in the matrix
