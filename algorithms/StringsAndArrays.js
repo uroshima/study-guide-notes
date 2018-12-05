@@ -38,3 +38,17 @@ function checkPermutation(str1, str2) {
   return true;
 }
 // Time Complexity is O(2n + k) => O(n)
+
+// Write a method to replace all spaces in a string with '20%'
+function URLify(str1) {
+  let result = '';
+  for (let i = 0; i < str1.length; i++) {
+    if (str1[i] == ' ') {
+      result += '20%';
+    } else {
+      result += str1[i];
+    }
+  }
+  return result;
+}
+// Time Complexity is O(n)
