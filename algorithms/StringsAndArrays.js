@@ -77,3 +77,41 @@ function palindromePermutation(str1) {
   return true;
 }
 // Time Complexity is O(n + k) ==> O(n)
+
+// There are three types of edits that can be performed on strings: insert a character,
+// remove a character or replace a character. Given two strings, write a function to check if
+// they are one edit (or zero edits) away.
+function oneWay(str1, str2) {
+  let myObj = {};
+  for (let i = 0; i < str1.length; i++) {
+    if (!myObj[str1[i]]) {
+      myObj[str1[i]] = 1;
+    } else {
+      myObj[str1[i]]++;
+    }
+  }
+  let xtraChar = 0;
+  for (let j = 0; j < str2.length; j++) {
+    if (!myObj[str2[j]]) {
+      xtraChar++;
+      if (xtraChar > 1) {
+        return false;
+      }
+    } else {
+      myObj[str2[j]]--;
+    }
+  }
+  let difference = 0;
+  for (var key in myObj) {
+    if (myObj[key] > 1 || myObj[key] < -1) {
+      return false;
+    } else if (myObj[key] != 0) {
+      difference++;
+      if (difference > 1) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+// Time Complexity is O(2n + k) => O(n)
