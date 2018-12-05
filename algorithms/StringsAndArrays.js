@@ -174,3 +174,27 @@ function zeroMatrix(matrix) {
   return newMatrix;
 }
 // Time Complexity is O(n^2) since we have to loop through all the elements in the matrix
+
+// Asume you have a method isSubstring which checks if one word is a substring of another. Given two strings,
+// s1 and s2, write code to check if s2 is a rotation of s1 using only one call to isSubstring
+// (e.g. "waterbottle" is a rotation of "erbottlewat")
+function stringRotation(str1, str2) {
+  let s1 = str1 + str1;
+  return isSubstring(s1, str2);
+}
+
+function isSubstring(s1, s2) {
+  let index;
+  if (s1.indexOf(s2[0]) == -1) {
+    return false;
+  } else {
+    index = s1.indexOf(s2[0]);
+  }
+  for (let i = 0; i < s2.length; i++) {
+    if (s2[i] != s1[index + i]) {
+      return false;
+    }
+  }
+  return true;
+}
+// Time complexity is O(n + m) ==> O(n)
