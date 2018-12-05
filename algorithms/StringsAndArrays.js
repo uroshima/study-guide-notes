@@ -115,3 +115,23 @@ function oneWay(str1, str2) {
   return true;
 }
 // Time Complexity is O(2n + k) => O(n)
+
+// Implement a method to perform basic string compression using the counts of repeated characters.
+// For example, the string 'aabcccccaaa' would become 'a2b1c5a3'. If the compressed string would not
+// become smaller than the original one, return the original string.
+function compression(str1) {
+  let newStr1 = '';
+  let j;
+  let count = 1;
+  for (let i = 0; i < str1.length; i++) {
+    j = i + 1;
+    if (str1[i] != str1[j]) {
+      newStr1 = newStr1 + `${str1[i]}` + `${count}`
+      count = 1;
+    } else {
+      count++;
+    }
+  }
+  return newStr1.length > str1.length ? str1 : newStr1;
+}
+// Time Complexity is O(n)
