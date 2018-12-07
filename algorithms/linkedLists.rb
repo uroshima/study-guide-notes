@@ -69,7 +69,7 @@ end
 
 
 # Write code to remove duplicates from an unsorted linked list
-def removeDuplicates(node)
+def remove_duplicates(node)
   hash = Hash.new()
   previous = nil
   while node != nil
@@ -105,4 +105,39 @@ end
 # Time is O(n)
 
 
-# Implement an algo
+# Implement an algorithm to delete a node in the middle (i.e. any node but the first and last node,
+# not necessarily the exact middle) of a singly linked list, given only acces to that node
+def delete_middle(node)
+  if node == nil || node.next == nil
+    return false # Failure
+  end
+  next_node = node.next
+  node.val = next_node.val
+  node.next = next_node.next
+  return true
+end
+# Time is O(1)
+
+
+# Write code to partition a linked list around a value x, such that all nodes less than x
+# come before all nodes greater than or equal to x. If x is contained within the list, the values of x
+# only need to be after the elements less than x. The partition element x can appear anywhere in the
+# "right partition"; it does not need to appear between the left and right partitions.
+def partition(node, x)
+  new_list_head = node
+  new_list_tail = node
+  next_node = node.next
+  while next_node != nil
+    if next_node.val < x
+      next_node.next = new_list_head
+      new_list_head = next_node
+    else
+      new_list_tail.next = next_node
+      new_list_tail = next_node
+    end
+    next_node = next_node.next
+  end
+  new_list_tail = nil
+  return new_list_head
+end
+# Time is O(n)
