@@ -86,3 +86,23 @@ end
 
 
 # Implement an algorithm to find kth to the last element of a singly linked list
+def kth_last(head, k)
+  p1 = head.next
+  p2 = head.next
+  i = 1
+  while i < k
+    return nil if p2 == nil #out of bounds
+    p2 = p2.next
+    i += 1
+  end
+
+  while p2.next != nil
+    p1 = p1.next
+    p2 = p2.next
+  end
+  return p1
+end
+# Time is O(n)
+
+
+# Implement an algo
