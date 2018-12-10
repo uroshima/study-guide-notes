@@ -141,3 +141,38 @@ def partition(node, x)
   return new_list_head
 end
 # Time is O(n)
+
+
+# You have two numbers represented by a linked list, where each node contains a single digit. The digits are stored in
+# reverse order, such that the 1's digit is at the head of the list. Write a function that adds the two numbers
+# and returns the sum as a linked list
+# This solution is not very clear, its from the book
+def sum_lists(list1, list2, carry)
+
+  if list1 == nil && list2 == nil && carry == 0
+    return nil
+  end
+
+  result = Node.new()
+  value = carry
+
+  if list1 != nil
+    value += list1.data
+  end
+
+  if list2 != nil
+    value += list2.data
+  end
+
+  result.data = value % 10 #second digit of number
+
+  # recursive
+  if list1 != nil || list2 != nil
+    more = sum_lists(list1 == nil ? nil : list1.next,
+                     list2 == nil ? nil : list2.next,
+                     value >= 10 ? 1 : 0)
+    result.setNext(more)
+  end
+
+  return result
+end
