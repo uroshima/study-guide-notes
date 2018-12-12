@@ -152,7 +152,6 @@ def sum_lists(list1, list2, carry)
   if list1 == nil && list2 == nil && carry == 0
     return nil
   end
-
   result = Node.new()
   value = carry
 
