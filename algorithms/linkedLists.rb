@@ -175,3 +175,35 @@ def sum_lists(list1, list2, carry)
 
   return result
 end
+
+
+# Implement a function to check if a linked list is a palindrome
+# Solution: We wanna reverse the half of the list and compare it to the other half.
+# For that we use stack
+def is_palindrome(head)
+  fast = head
+  slow = head
+  stack = Stack.new()
+  #Push elements from first half onto stack.
+  # When fast runner reaches the end of the list (is moving 2x) then we know we are at the middle
+  while fast != nil && fast.next != nil
+    stack.push(slow.data)
+    slow = slow.next
+    fast = fast.next.next
+  end
+
+  # We wanna start from the first element from the second half
+  if fast != nil
+    slow = slow.next
+  end
+
+  while slow != nil
+    top = stack.pop()
+    if top != slow.data
+      return false
+    end
+    slow = slow.next
+  end
+
+  return true
+end
