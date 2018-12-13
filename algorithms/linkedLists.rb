@@ -231,7 +231,7 @@ def intersect(list1, list2)
     longer_node = longer_node.next
   end
 
-  return shorter  
+  return shorter
 end
 
 # Helper class & methods
@@ -262,4 +262,31 @@ def getKthNode(head, k)
   end
 
   return current
+end
+
+
+# Given a circular linked list, implement an algorithm that returns the node at the beggining of the loop
+# Solution: If the space doesn't matter, we can just loop through the list and push every node in a hash.
+# If the node is already in the hash, we return that node. If space does matter, this is a good solution
+def loop_detection(head)
+  slow = head
+  fast = head
+  while fast != nil && fast.next != nil
+    slow = slow.next
+    fast = fast.next.next
+    break if slow == fast
+  end
+
+  # no meeting point and therefore no loop
+  if fast == nil && fast.next == nil
+    return nil
+  end
+
+  slow = head
+  while slow != fast
+    slow = slow.next
+    fast = fast.next
+  end
+
+  return fast 
 end
