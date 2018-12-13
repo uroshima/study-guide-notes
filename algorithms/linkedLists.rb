@@ -207,3 +207,59 @@ def is_palindrome(head)
 
   return true
 end
+
+
+# Given two singly linked lists determine if the two list intersect.
+# Return the intersecting node
+def intersect(list1, list2)
+  if list1 == nil && list2 == nil
+    return nil
+  end
+
+  result1 = getTailAndSize(list1)
+  result2 = getTailAndSize(list2)
+  if result1.tail != result2.tail
+    return nil
+  end
+
+  shorter = result1.size < result2.size ? list1 : list2
+  longer = result1.size > result2.size ? list1 : list2
+  longer_node = getKthNode(longer, Math.abs(result1.size - result2.size))
+
+  while shorter != longer_node
+    shorter = shorter.next
+    longer_node = longer_node.next
+  end
+
+  return shorter  
+end
+
+# Helper class & methods
+class Result
+  def initialize(tail, size)
+    @tail = tail
+    @size = size
+  end
+end
+
+def getTailAndSize(list)
+  return nil if list == nil
+  size = 1
+  current = list
+  while current.next != nil
+    size += 1
+    current = current.next
+  end
+
+  return Result.new(current, size)
+end
+
+def getKthNode(head, k)
+  current = head
+  while (k > 0 && current != nil)
+    current = current.next
+    k -= 1
+  end
+
+  return current
+end
