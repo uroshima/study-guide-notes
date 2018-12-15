@@ -36,6 +36,7 @@ end
 # which performs a pop operation on a specific sub-stack.
 class SetOfStacks
   attr_reader :current_stack, :set
+  
   def initialize(capacity)
     @current_stack = Stack.new
     @set = []
