@@ -31,12 +31,13 @@ class Stack
 end
 
 
+
 # SetOfStacks should be composed of several stacks and should create a new stack
 # once the previous one exceeds capacity.Also implement a function popAt(index)
 # which performs a pop operation on a specific sub-stack.
 class SetOfStacks
   attr_reader :current_stack, :set
-  
+
   def initialize(capacity)
     @current_stack = Stack.new
     @set = []
