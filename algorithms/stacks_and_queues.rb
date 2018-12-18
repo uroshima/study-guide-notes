@@ -91,4 +91,86 @@ def sort(s)
   end
   return s
 end
-# This algorithm is O(n^2) time and O(n) space 
+# This algorithm is O(n^2) time and O(n) space
+
+
+# Animal Shelter
+class Cat
+  attr_reader :name, :days_in_shelter
+
+  def initialize(name, days_in_shelter)
+    @name = name
+    @days_in_shelter = days_in_shelter
+  end
+end
+
+class Dog
+  attr_reader :name, :days_in_shelter
+
+  def initialize(name, days_in_shelter)
+    @name = name
+    @days_in_shelter = days_in_shelter
+  end
+end
+
+class CatQueue
+
+  def initialize
+    @cats = []
+  end
+
+  def enqueue(cat)
+    @cats.push(cat)
+  end
+
+  def dequeue
+    @cats.shift()
+  end
+end
+
+class DogQueue
+
+  def initialize
+    @dogs = []
+  end
+
+  def enqueue(dog)
+    @dogs.push(dog)
+  end
+
+  def dequeue
+    @dogs.shift()
+  end
+end
+
+class AnimalQueue
+  attr_reader :dog, :cat, :cats, :dogs
+
+  def initialize(cats, dogs)
+    @cats = cats
+    @dogs = dogs
+    @cat = @cats.dequeue
+    @dog = @dogs.dequeue
+  end
+
+  def dequeue_dog
+    dog_out = @dog
+    @dog = @dogs.dequeue
+    return dog_out.name + " is out"
+  end
+
+  def dequeue_cat
+    cat_out = @cat
+    @cat = @cats.dequeue
+    return cat_out.name + " is out"
+  end
+
+  def dequeue_any
+    # if the cat has been in the shelter longer than the dog
+    if @cat.days_in_shelter > @dog.days_in_shelter
+      self.dequeue_cat
+    else
+      self.dequeue_dog
+    end
+  end
+end
