@@ -70,3 +70,25 @@ class SetOfStacks
     end
   end
 end
+
+
+# Write a program to sort a stack such that the smallest items are on the top. You can use additional
+# temporary stack but you may not copy the elements into any other data structure such as an array.
+# The stack supports the following operations: push, pop, peek, isEmpty
+def sort(s)
+  r = Stack.new
+  while !s.isEmpty()
+    # Insert each element in s in sorted order into r
+    temp = s.pop()
+    while !r.isEmpty() && r.peek() > temp
+      s.push(r.pop())
+    end
+    r.push(temp)
+  end
+  # Copy the elements from r back to s
+  while !r.isEmpty()
+    s.push(r.pop())
+  end
+  return s
+end
+# This algorithm is O(n^2) time and O(n) space 
