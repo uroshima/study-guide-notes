@@ -55,7 +55,7 @@ class SetOfStacks
   end
 
   def pop
-    if @current_stack.empty?
+    if @current_stack.length == 0
       @set.pop()
       @current_stack = @set.last
     end
@@ -63,6 +63,10 @@ class SetOfStacks
   end
 
   def popAt(index)
-    @set[index].pop()
+    if @set[index] == nil
+      p "No such a stack"
+    else
+      @set[index].pop()
+    end
   end
 end
