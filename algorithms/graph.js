@@ -25,7 +25,7 @@ class Graph {
         this.AdjList.get(v).push(w);
 
         // Since graph is undirected,
-        // add an edge from w to w also
+        // add an edge from w to v also
         this.AdjList.get(w).push(v);
     }
 
@@ -150,5 +150,33 @@ g.addEdge('C', 'F');
 // F -> E C
 g.printGraph();
 
+
 // Given a directed graph,design an algorithm to find out 
 // whether there is a route between two nodes 
+bfs(graph, startingNode, endingNode) {
+    var visited = [];
+    for (var i = 0; i < graph.noOfVertices; i++) {
+        visited[i] = false;
+    }
+    var q = new Queue();
+    visited[startingNode] = true;
+    q.enqueue(startingNode);
+
+    while (!q.isEmpty()) {
+\       var getQueueElement = q.dequeue();
+        var get_List = graph.AdjList.get(getQueueElement);
+
+        for (var i in get_List) {
+            var neigh = get_List[i];
+
+            if (neigh == endingNode) {
+                return true;
+            }
+            if (!visited[neigh]) {
+                visited[neigh] = true;
+                q.enqueue(neigh);
+            }
+        }
+    }
+    return false;
+}
