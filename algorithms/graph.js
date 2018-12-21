@@ -153,7 +153,7 @@ g.printGraph();
 
 // Given a directed graph,design an algorithm to find out 
 // whether there is a route between two nodes 
-bfs(graph, startingNode, endingNode) {
+function bfs(graph, startingNode, endingNode) {
     var visited = [];
     for (var i = 0; i < graph.noOfVertices; i++) {
         visited[i] = false;
@@ -180,3 +180,5 @@ bfs(graph, startingNode, endingNode) {
     }
     return false;
 }
+
+
