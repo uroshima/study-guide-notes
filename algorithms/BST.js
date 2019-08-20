@@ -19,7 +19,8 @@ function maxDepth(root) {
 }
 
 //  How can you determine what the Least common ancestor of two nodes is?
-//  We can simply find the way from the nodes to the root and push those nodes to 2 different arrays. Then return the common element just before the mismatch.       
+//  We can simply find the way from the nodes to the root and push those nodes to 2 different arrays. 
+// Then return the common element just before the mismatch.       
 
 // Practice
 // 1. Given preorder traversal of a binary search tree, construct the BST.
@@ -30,7 +31,9 @@ function maxDepth(root) {
 //   /  \      \
 //  1    7      50
 
-// The first element of preorder traversal is always root. For example in {10, 5, 1, 7, 40, 50}, 10 is the first element, so we make it root. Now we look for the first element greater than 10, we find 40. So we know the structure of BST is as following.
+// The first element of preorder traversal is always root. For example in {10, 5, 1, 7, 40, 50}, 
+// 10 is the first element, so we make it root. Now we look for the first element greater than 10, 
+// we find 40. So we know the structure of BST is as following.
 
 //          10
 //        /    \
