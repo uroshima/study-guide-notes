@@ -14,3 +14,6 @@ Continuous deployment is an excellent way to accelerate the feedback loop with y
 
 Summary
 To put it simply continuous integration is part of both continuous delivery and continuous deployment. And continuous deployment is like continuous delivery, except that releases happen automatically.
+
+More info:
+https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment

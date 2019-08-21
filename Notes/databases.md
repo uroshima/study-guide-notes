@@ -1,5 +1,12 @@
-What are the advantages and disadvantages of NoSQL databases vs. SQL databases?
+How do you analyze data?
+To improve your data analysis skills and simplify your decisions, execute these five steps in your data analysis process:
+Step 1: Define Your Questions. ...
+Step 2: Set Clear Measurement Priorities. ...
+Step 3: Collect Data. ...
+Step 4: Analyze Data. ...
+Step 5: Interpret Results.
 
+What are the advantages and disadvantages of NoSQL databases vs. SQL databases?
 Arguments for SQL (Relational Databases):
 
   1. Structured Data - Relational databases are really nice when you have a lot of data that’s needs to be structured in a very specific way, with different sets of data that relate to each other in some way.
