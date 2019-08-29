@@ -1,3 +1,35 @@
+-----------AlertEnterprise------------------
+
+----Professional Consultant-----
+
+JOB DESCRIPTION
+The position is responsible for supporting delivery and support of high quality Identity and Access Management services while adhering to AlertEnterprise standards and best practices. The ideal Candidate would have experience primarily in Software Delivery process to serve as a member of multiple client engagement teams that assist clients in employing proper information systems, resources, and controls to maximize efficiencies and minimize risk. Ability to take up challenges, adapt to the business needs, and staying focused on delivering results are essential to the success of this role.
+
+-Requirements:
+1. Any Identity Manager: Oracle Identity Manager or Sun IDM, Sail Point etc.
+
+Identity management, also known as identity and access management, is a framework of policies and technologies for ensuring that the proper people in an enterprise have the appropriate access to technology resources. IdM systems fall under the overarching umbrella of IT security and Data Management.
+
+2. Has good understanding of systems like LDAP and UNIX, Linux and systems like SAP, Active Directory.
+
+- What is LDAP and how is it used?
+In Windows Server LDAP is a protocol which is used for access Active Directory object, user authentication, authorization. LDAP is also used to store your credentials in a network security system and retrieve it with your password and decrypted key giving you access to the services.
+- What is Active Directory and how does it work?
+Active Directory Domain Services is Microsoft's Directory Server. It provides authentication and authorization mechanisms as well as a framework within which other related services can be deployed (AD Certificate Services, AD Federated Services, etc). It is an LDAP compliant database that contains objects.
+
+3. Any Single Sign On Solution: Oracle Access Manager, PingFederate, Oauth2.0
+
+- What is a single-sign on provider?
+A single-sign on, or SSO, allows professionals to use one single login and password (or other means of authentication, such as a smart card) across an organization to access many different systems.
+- What are the best single-sign on solutions in 2019?
+  - Okta. Okta acts as more than just a single sign-on solution, but it's a great tool for SSO nonetheless. 
+  - OneLogin. ...
+  - RSA SecurID Access. ...
+  - Idaptive Next-Gen Access. ...
+  - Ping Intelligent Identity Platform. ...
+  - Microsoft Azure Active Directory. ...
+  - CA Single Sign-On.
+--------------------------------------------
 Explain TCP, and why it is a necessary protocol
   TCP/IP (Transmission Control Protocol/Internet Protocol) is a set of allows anyone with a computer, modem, and an Internet service provider to access and share information over the Internet.Both TCP and IP, two separate protocols that work hand-in-hand, perform chores that manage and guide the general mobility of data packets over the Internet.
 
