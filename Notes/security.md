@@ -1,10 +1,5 @@
 -----------AlertEnterprise------------------
 
-----Professional Consultant-----
-
-JOB DESCRIPTION
-The position is responsible for supporting delivery and support of high quality Identity and Access Management services while adhering to AlertEnterprise standards and best practices. The ideal Candidate would have experience primarily in Software Delivery process to serve as a member of multiple client engagement teams that assist clients in employing proper information systems, resources, and controls to maximize efficiencies and minimize risk. Ability to take up challenges, adapt to the business needs, and staying focused on delivering results are essential to the success of this role.
-
 -Requirements:
 1. Any Identity Manager: Oracle Identity Manager or Sun IDM, Sail Point etc.
 
